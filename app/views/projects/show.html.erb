@@ -36,14 +36,12 @@
 			</div>
 		</div>
     <div id="Content">
-			<h1><%= @project.name %></h1><br />  
-      <%= link_to('Apply now', "https://sp.campuscrusadeforchrist.com/apply/#{@project.id}") %>
+			<h1><%= @project.name %></h1>
+      <div class="project_apply_wrap"><%= link_to('Apply for this Project', "https://sp.campuscrusadeforchrist.com/apply/#{@project.id}", :class => "project_apply") %></div>
       <h2>Description</h2>
-			<p><%= raw @project.description %></p>
+			<div class="project_desc_long"><%= raw @project.description %></div>
+			<div class="project_apply_wrap"><%= link_to('Apply for this Project', "https://sp.campuscrusadeforchrist.com/apply/#{@project.id}", :class => "project_apply") %></div>
 			<div class="facebook_container">
-        <div class="fb_like">
-          <a name="fb_share" class="tipTip"  title="This will share this specific page link and its description with your friends on Facebook by posting it to your wall." href="http://www.facebook.com/sharer.php?u=http://www.gosummerproject.com/projects/<%= @project.id %>" style="border: none;"><img src="http://www.gosummerproject.com/images/fb_share.jpg" border="0" /></a>
-        </div>
         <div class="fb_recommend" >
         	<fb:like href="http://www.GoSummerProject.com" action="recommend" showfaces="yes" font="segoe ui"></fb:like>
         </div>
