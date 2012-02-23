@@ -37,10 +37,10 @@
 		</div>
     <div id="Content">
 			<h1><%= @project.name %></h1>
-      <div class="project_apply_wrap"><%= link_to('Apply for this Project', "https://sp.campuscrusadeforchrist.com/apply/#{@project.id}", :class => "project_apply") %></div>
+      <div class="project_apply_wrap"><%= link_to('Apply for this Project', "https://sp.campuscrusadeforchrist.com/apply", :class => "project_apply") %></div>
       <h2>Description</h2>
 			<div class="project_desc_long"><%= raw @project.description %></div>
-			<div class="project_apply_wrap"><%= link_to('Apply for this Project', "https://sp.campuscrusadeforchrist.com/apply/#{@project.id}", :class => "project_apply") %></div>
+			<div class="project_apply_wrap"><%= link_to('Apply for this Project', "https://sp.campuscrusadeforchrist.com/apply", :class => "project_apply") %></div>
 			<div class="facebook_container">
         <div class="fb_recommend" >
         	<fb:like href="http://www.GoSummerProject.com" action="recommend" showfaces="yes" font="segoe ui"></fb:like>
