@@ -116,7 +116,7 @@ class ProjectsController < ApplicationController
   end
   
   def markers
-    #raise basic_conditions.flatten.join(" AND ").inspect
+    # raise basic_conditions.flatten.join(" AND ").inspect
     @projects = SpProject.where(basic_conditions.flatten.join(" AND "))
     render :layout => false
   end
