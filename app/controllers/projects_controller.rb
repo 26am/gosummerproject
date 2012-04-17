@@ -116,8 +116,8 @@ class ProjectsController < ApplicationController
   end
   
   def markers
-    # raise basic_conditions.flatten.inspect
-    @projects = SpProject.where(basic_conditions.flatten)
+    #raise basic_conditions.flatten.join(" AND ").inspect
+    @projects = SpProject.where(basic_conditions.flatten.join(" AND "))
     render :layout => false
   end
 
@@ -165,10 +165,9 @@ protected
     @year = 2012
     conditions = [[],[]]
     conditions[0] << "#{SpProject.table_name}.show_on_website = 1"
-    conditions[0] << "#{SpProject.table_name}.year = ? "
+    conditions[0] << "#{SpProject.table_name}.year = '#{@year}' "
     conditions[0] << "#{SpProject.table_name}.project_status = 'open'"
     conditions[0] << "(#{SpProject.table_name}.current_students_men + #{SpProject.table_name}.current_students_women + #{SpProject.table_name}.current_applicants_men + #{SpProject.table_name}.current_applicants_women) < (#{SpProject.table_name}.max_student_men_applicants + #{SpProject.table_name}.max_student_women_applicants)"
-    conditions[1] << @year
     conditions
   end
 
