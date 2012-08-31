@@ -153,13 +153,21 @@ input:-webkit-input-placeholder, input:-moz-placeholder {color:#CCC;}
 ============================================== */
 .col {width:250px; float:left; text-align:center; margin:15px auto 0px auto; padding:0 8px;}
 .col h3 { font-size:14px;} .col h4 { font-size:12px; padding-top:5px;}
-.col img {width: 150px; height: 150px;}
+.col img {width: 150px; height: 150px;margin-bottom: 10px; -webkit-transform: rotate(-2deg); -moz-transform: rotate(-2deg);}
 .storytag {background:url('/images/tag.png') no-repeat; width:246px; height:63px; padding:8px 0 0 0; margin: -20px 0 0 0; font-size:20px; text-decoration:none; color:#eee; z-index:1;}
+.storytag h2 {line-height: 1em; font-size: 20px; margin-top: 3px;}
 
 /* ===========================================
 	FOOTER
 ============================================== */
-#footer {font-family: 'Rockwell'; font-size:15px; background-image: none; text-align: center; width: 1000px; padding: 20px; margin: 0 auto; }
+#footer {font-family: 'Rockwell'; font-size:15px; background-image: none; text-align: center; width: 900px; padding: 20px 20px 50px 20px; margin: 0 auto; }
+#footer .meta {	float: right; text-align: right;}
+#footerlinks {}
+ul.links {list-style: none; float: left; margin: 0 30px 0 0; text-align: left; font-size: 13px;}
+ul.links li {margin-bottom: 5px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+ul.links a {color: #666;}
+ul.links .head a {color: #EC1D3B; font-size: 15px; font-family: 'Rockwell';}
+
 
 /* ===========================================
 	PAGES
