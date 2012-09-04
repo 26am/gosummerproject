@@ -108,7 +108,7 @@
 	</div>
 </section> 
 
-<section id="decision" class="fabric"> 
+<section id="decision"> 
 	<div class="ribbon"><div class="container" title="Back to Top"><a href="#home" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
 	<div class="container">
 		<h1>HERE ARE SOME RESOURCES</h1>
@@ -138,35 +138,37 @@
 	<div class="container">
 		<h1>PLAN AHEAD TO APPLY FOR SUMMER PROJECT</h1>
 		<h2 id='timeline'></h2>
-		<div id="dates">
-			<h2 style="color:#EC173F; font-family:'MuseoSans-700'; margin:0 0 5px 15px;">APPLICATION DEADLINES</h2>
-			<div id="boxtop"><h2 id="dec10"></h2></div>
-			<div style="background:#90D8EC; padding:15px;"><h2 id="jan24"></h2></div>
-			<div id="boxbottom"><h2 id="feb24"></h2></div>
-		</div>
 		<div id="status">
-			<h2 style="color:#EC173F; font-family:'MuseoSans-700';margin:0 0 5px 15px;">MY APPLICATION STATUS</h2>
-			<h3 style="margin-left:15px;">Sign in through one of these services:</h3>
-			<div style="margin-left:15px;">
-				<div class="services"><%= link_to image_tag('facebook.png'), 'https://sp.campuscrusadeforchrist.com/auth/facebook' %><h4 style="margin-top:3px;">Facebook</h4></div>
-				<div class="services"><%= link_to image_tag('google.png'), 'https://sp.campuscrusadeforchrist.com/auth/google_apps' %><h4 style="margin-top:3px;">Google</h4></div>
-				<div class="services"><%= link_to image_tag('relay.png'), 'https://signin.ccci.org/cas/login?service=http%3A%2F%2Fsp.campuscrusadeforchrist.com%2Fauthentications' %><h4 style="margin-top:3px;">Relay</h4></div>
-			</div>
-			<h3 style="margin: 115px 0 5px 15px; ">Don't use these services?</h3>
-			<div id="login">
-				<h4 style="font-size:18px; margin-left:15px; padding-top:10px;">YOU CAN SIGN IN OR <%= link_to "SIGN UP HERE", "https://sp.campuscrusadeforchrist.com/users/new" %></h4>
-				<div id="contact_form">
-					<form accept-charset="UTF-8" action="https://sp.campuscrusadeforchrist.com/session" method="post">
-						<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="AwbA1lAb+jvexWB9kTrqROyJ7WMDnIkI+gM8UAsQfPc=" /></div>
-						<fieldset>
-							<input type="text" id="username" name="username" placeholder="USERNAME" />
-							<input type="password" id="password" name="password" placeholder="PASSWORD" />
-							<input type="submit" value="Login" name="submit"/>
-						</fieldset>
-					</form>
-				</div>
-				<h4 id="forgotPass"><a href="https://sp.campuscrusadeforchrist.com/session/send_password_email">Forgot your password?</a></h4>	      
-			</div>
+			<h2 style="color:#EC173F; font-family:'MuseoSans-700';padding:0 0 5px 15px;">MY APPLICATION STATUS</h2>
+			<table>
+			<tr>
+			<td class="width48">
+  			<h3 style="padding-left:15px;">Sign in through one of these services:</h3>
+  			<div style="padding-left:15px;">
+  				<div class="services"><%= link_to image_tag('facebook.png'), 'https://sp.campuscrusadeforchrist.com/auth/facebook' %><h4 style="margin-top:3px;">Facebook</h4></div>
+  				<div class="services"><%= link_to image_tag('google.png'), 'https://sp.campuscrusadeforchrist.com/auth/google_apps' %><h4 style="margin-top:3px;">Google</h4></div>
+  				<div class="services"><%= link_to image_tag('relay.png'), 'https://signin.ccci.org/cas/login?service=http%3A%2F%2Fsp.campuscrusadeforchrist.com%2Fauthentications' %><h4 style="margin-top:3px;">Relay</h4></div>
+  			</div>
+      </td>
+      <td class="width48 widthlast">
+  			<h3 style="">Don't use these services?</h3>
+  			<div id="login">
+  				<h4 style="font-size:18px; margin-left:15px; padding-top:10px;">YOU CAN SIGN IN OR <%= link_to "SIGN UP HERE", "https://sp.campuscrusadeforchrist.com/users/new" %></h4>
+  				<div id="contact_form">
+  					<form accept-charset="UTF-8" action="https://sp.campuscrusadeforchrist.com/session" method="post">
+  						<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="AwbA1lAb+jvexWB9kTrqROyJ7WMDnIkI+gM8UAsQfPc=" /></div>
+  						<fieldset>
+  							<input type="text" id="username" name="username" placeholder="USERNAME" />
+  							<input type="password" id="password" name="password" placeholder="PASSWORD" />
+  							<input type="submit" value="Login" name="submit"/>
+  						</fieldset>
+  					</form>
+  				</div>
+  				<h4 id="forgotPass"><a href="https://sp.campuscrusadeforchrist.com/session/send_password_email">Forgot your password?</a></h4>	      
+  			</div>
+      </td>
+      </tr>
+      </table>
 		</div> 
 	</div>
 </section> 
@@ -193,9 +195,9 @@
 			<div class='col3'>
 				<%= link_to '/graphics' do %>
 					<h2 id='graphics'></h2>
-					<h2 class='downloadtag'>DOWNLOAD<br />2012 GRAPHICS</h2>
+					<h2 class='downloadtag'>DOWNLOAD<br />2013 GRAPHICS</h2>
 				<% end %>
-				<h3>Download a wallpaper, updated your Facebook profile image, and print posters to share with your friends on campus with a these Summer Project 2012 graphics.</h3>
+				<h3>Download a wallpaper, updated your Facebook profile image, and print posters to share with your friends on campus with a these Summer Project 2013 graphics.</h3>
 			</div>
 		</div>
 	</div> 
@@ -248,48 +250,42 @@
 		<h1>HERE ARE THE STORIES OF OTHERS LIKE YOU</h1> 
 		<div style="width:800px; margin:auto;margin-top:15px;">
 			<div class='col'>
-				<%= link_to image_tag('stories/anna.png'), '/stories/anna' %>
-				<%= link_to '/stories/anna' do %>
-					<div class='storytag'><h2>Anna</h2><h4>struggled with personal insecurities</h4></div>
+				<%= link_to image_tag('stories/meghan.png'), '/stories/meghan' %>
+				<%= link_to '/stories/meghan' do %>
+					<div class='storytag'><h2>Meghan</h2><h4>Anxious about Support Raising</h4></div>
 				<% end %>
-				<h3>"I still had to be aware of my multiple sclerosis, but I couldn't let that overpower the call the Lord had placed on my heart."</h3>
 			</div>
 			<div class='col'>
-				<%= link_to image_tag('stories/danny.png'), '/stories/danny' %>
-				<%= link_to '/stories/danny' do %>
-					<div class='storytag'><h2>Danny</h2><h4>struggled with raising support</h4></div>
+				<%= link_to image_tag('stories/josh.png'), '/stories/josh' %>
+				<%= link_to '/stories/josh' do %>
+					<div class='storytag'><h2>Josh</h2><h4>Wanted his parents’ approval</h4></div>
 				<% end %>
-				<h3>"I had to raise support while studying abroad. So it was very strange and I felt disconnected from everything."</h3>
 			</div>
 			<div class='col'>
-				<%= link_to image_tag('stories/jordan.png'), '/stories/jordan' %>
-				<%= link_to '/stories/jordan' do %>				
-					<div class='storytag'><h2>Jordan</h2><h4>needed to find a job</h4></div>
+				<%= link_to image_tag('stories/ryan.png'), '/stories/ryan' %>
+				<%= link_to '/stories/ryan' do %>				
+					<div class='storytag'><h2>Ryan</h2><h4>Struggled with insecurities</h4></div>
 				<% end %>
-				<h3>"Everything is possible through the Lord, but it's easy for those words to become empty when you feel defeated." </h3>
 			</div>
 		</div>
 		<div style="width:800px; margin:auto;">
 			<div class='col'>
-				<%= link_to image_tag('stories/jacob.png'), '/stories/jacob' %>
-				<%= link_to '/stories/jacob' do %>
-					<div class='storytag'><h2>Jacob</h2><h4>struggled with other<br>summer requirements</h4></div>
+				<%= link_to image_tag('stories/coleton.png'), '/stories/coleton' %>
+				<%= link_to '/stories/coleton' do %>
+					<div class='storytag'><h2>Coleton</h2><h4>Needed with internship requirements</h4></div>
 				<% end %>
-				<h3>"I wanted to know that summer project wasn't just a good thing to do. I wanted to know that summer project was the God thing to do."</h3>
 			</div>
 			<div class='col'>
-				<%= link_to image_tag('stories/elizabeth.png'), '/stories/elizabeth' %>
-				<%= link_to '/stories/elizabeth' do %>
-					<div class='storytag'><h2>Elizabeth</h2><h4>questioned God's call</h4></div>
+				<%= link_to image_tag('stories/rosa.png'), '/stories/rosa' %>
+				<%= link_to '/stories/rosa' do %>
+					<div class='storytag'><h2>Rosa</h2><h4>Needed her family’s approval</h4></div>
 				<% end %>
-				<h3>"I just didn't think the Lord had called me to go out of the country and that he could use me to share his gospel."</h3>
 			</div>
 			<div class='col'>
-				<%= link_to image_tag('stories/brea.png'), '/stories/brea' %>
-				<%= link_to '/stories/brea' do %>
-					<div class='storytag'><h2>Brea</h2><h4>needed her parents approval</h4></div>
+				<%= link_to image_tag('stories/sarah.png'), '/stories/sarah' %>
+				<%= link_to '/stories/sarah' do %>
+					<div class='storytag'><h2>Sarah</h2><h4>Struggled with feeling inadequate</h4></div>
 				<% end %>
-				<h3>"I definitely had an emotional need for my parent's approval, which was hard to work through."</h3>
 			</div>
 		</div>
 	</div> 
