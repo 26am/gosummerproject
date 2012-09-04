@@ -28,7 +28,7 @@ section { text-align: left; overflow:hidden; height:100%; width: 100%; margin: 0
 /* ===========================================
 	NAVIGATION
 ============================================== */
-#nav { top:345px; background:#FFF; width:100%; position: absolute; z-index: 1000; -moz-box-shadow: 0px 8px 8px -8px #999;-webkit-box-shadow: 0px 8px 8px -8px #999;box-shadow: 0px 8px 8px -8px #999; overflow:visible; border:none; }
+#nav { top:353px; background:#FFF; width:100%; position: absolute; z-index: 1000; -moz-box-shadow: 0px 8px 8px -8px #999;-webkit-box-shadow: 0px 8px 8px -8px #999;box-shadow: 0px 8px 8px -8px #999; overflow:visible; border:none; }
 #nav  ul {margin:auto; padding:0; width: 960px; }
 #nav .banner { height:85px; }
 #stitch { height:40px; background:url('/images/nav/stitch.jpg') repeat-x; }
@@ -44,7 +44,8 @@ section { text-align: left; overflow:hidden; height:100%; width: 100%; margin: 0
 #nav.active .banner ul { *position: absolute !important; *top: 345px !important; }
 #nav.active .banner { *position: absolute !important; *top: 345px !important; }
 
-#nav .landing { height:40px; }
+#nav .landing_wrap {width: 1000px; margin: 0 auto;}
+#nav .landing { height:40px; float: right; width: auto;}
 #nav .landing img { vertical-align:top; margin:10px 2px; border:0; outline: none; }
 #nav .landing a {opacity:0.6; filter:alpha(opacity=60); }
 #nav .landing a:hover, #nav .landing a.selected, #nav.active .landing ul, #nav.active .landing { opacity:1; filter:alpha(opacity=100);}
@@ -56,7 +57,7 @@ section { text-align: left; overflow:hidden; height:100%; width: 100%; margin: 0
 ============================================== */
 #browser, #browser p {color:#3da5a0;font-size:12px;float:right;margin:0 5px 0 0;}
 #home { padding:0; height: 345px; text-align: center; background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(rgba(255,255,255,1)), to(rgba(255,255,255,0))); background: -moz-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,1));*/}
-#logo { margin-top: 80px; width: 100%; height: 170px; }
+#logo { margin-top: 0px; width: 100%; height: 170px; }
 #logo a { border: 0; margin: 0 auto; width: 266px; height: 170px; display: block; background: transparent url('/images/sp12.png') no-repeat ;  }
 
 /* ===========================================
@@ -260,6 +261,91 @@ ul.links .head a {color: #EC1D3B; font-size: 15px; font-family: 'Rockwell';}
 	margin:30px auto 0;
 	width:100%;
 }
+
+/* ===========================================
+	New Home
+============================================== */
+
+
+	/* body {margin: 0; padding: 0; background-color: #eee; font-family: 'Rockwell', 'kulturista-web', "Palatino Linotype", "Book Antiqua", Palatino, serif;} */
+		#pageHeader {background: white url(/images/stitching.png) center bottom repeat-x; height: 393px; padding: 0 40px;}
+		#headerLeft {float: left; padding-top: 47px; width: 266px; height: 336px; text-align: center; position: relative;}
+		  #letsgo {position: absolute; bottom: -17px; left: 55px; z-index: 1001;}
+		#headerRight {float: right; padding-right: 15px; width: 440px;}
+		  #smlogin {margin: 10px 0; font-size: 14px; text-align: right; font-family: 'Rockwell', 'kulturista-web', "Palatino Linotype", "Book Antiqua", Palatino, serif;}
+		  #smlogin a {color: #58585a; text-decoration: none;}
+		  #smlogin a:hover {text-decoration: underline;}
+		  #sliderWrapper {margin-bottom: 17px;}
+		  #sliderNav {margin-bottom: 10px; height: 16px;}
+		  #sliderNav a {display: inline-block; float: right; padding: 8px; border-radius: 8px; background-color: #00abbd; margin-left: 6px;}
+		  #sliderNav a:hover {background-color: #ed1a3b;}
+		  #slider {background: #cac8c8 url(/images/play.png) center center no-repeat; height: 200px;}
+		  #links {text-align: center;}
+		  #links a {margin: 0 23px;}
+		#splash {height: 580px; padding: 40px; margin: 0 auto; }
+		#splash_left {width: 64px; height: 484px; border-radius: 28px 0 0 28px; background-color: #9a9a9a; margin-top: 34px; padding-top: 28px; text-align: center; float: left; box-shadow: #404040 0 0 10px inset;}
+		#splash_left ul, #splash_left li {margin: 0; padding: 0; list-style: none; font-family: 'Rockwell', 'kulturista-web', "Palatino Linotype", "Book Antiqua", Palatino, serif;}
+		ul#splash_mainmenu > li {position: relative;}
+		ul#splash_mainmenu > li:hover {background-color: #ffffff;}
+		ul#splash_mainmenu > li > a {display: block; padding: 5px 0;}
+		ul#splash_mainmenu > li > a:hover {background-color: #fff;}
+		ul#splash_mainmenu > li > a > img {display: block; width: 42px; margin: 0 auto;}
+
+		div.splash_submenu, div.splash_submenu2 {position: absolute; left: 64px; top: -34px; background-color: #fff; padding: 5px 0 10px; border-radius: 5px; text-align: left; width: 255px; z-index: 1;}
+		ul#splash_mainmenu > li:last-of-type div.splash_submenu {padding: 5px 10px; width: 336px;}
+		div.splash_submenu h1, div.splash_submenu h2 {margin: 0; font-family: "myriad-pro", "Trebuchet MS", Arial, Helvetica, sans-serif; text-transform: uppercase; padding: 0 15px;}
+		div.splash_submenu h1 {color: #ec1d3b; font-size: 24px; text-align: left;}
+		div.splash_submenu h2 {color: #00abbd; font-size: 18px; margin-bottom: 5px;}
+		div.splash_submenu li {height: 52px; position: relative;}
+		div.splash_submenu li:last-of-type {margin-bottom: 0 !important;}
+		div.splash_submenu li:hover {background-color: #e0e0e0;}
+		div.splash_submenu p {font-size: 10px; color: #ec1d3b; margin-bottom: 0; padding: 0 15px;}
+		div.splash_submenu a {color: #ec1d3b; font-size: 18px; line-height: 42px; font-weight: bold; text-decoration: none; text-transform: uppercase; display: block; padding: 5px 0 5px 72px; background-position: 25px center; background-repeat: no-repeat;}
+		div.splash_submenu a:hover {background-color: #e0e0e0;}
+		div.splash_submenu input {margin-left: 0px; border: #9a9a9a 3px solid; border-radius: 3px; padding: 5px; text-transform: uppercase; font-size: 24px; font-family: "myriad-pro", "Trebuchet MS", Arial, Helvetica, sans-serif; width: 320px;}
+
+		ul#splash_geo > li:first-of-type a {background-image: url(/images/icon42_us.png);}
+		ul#splash_geo > li:nth-of-type(2) a {background-image: url(/images/icon42_world.png);}
+		ul#splash_geo > li:last-of-type a {background-image: url(/images/icon42_map.png);}
+
+		ul#splash_env > li:first-of-type a {background-image: url(/images/icon42_city.png);}
+		ul#splash_env > li:nth-of-type(2) a {background-image: url(/images/icon42_beach.png);}
+		ul#splash_env > li:last-of-type a {background-image: url(/images/icon42_mountains.png);}
+
+		ul#splash_opt > li:first-of-type a {background-image: url(/images/icon42_internship.png);}
+		ul#splash_opt > li:nth-of-type(2) a {background-image: url(/images/icon42_options.png);}
+		ul#splash_opt > li:last-of-type a {background-image: url(/images/icon42_greek.png);}
+
+		ul#splash_len > li:first-of-type a {background-image: url(/images/icon42_1-2weeks.png);}
+		ul#splash_len > li:nth-of-type(2) a {background-image: url(/images/icon42_3-5weeks.png);}
+		ul#splash_len > li:last-of-type a {background-image: url(/images/icon42_7-12weeks.png);}
+
+		div.splash_submenu2 {left: 255px; border-radius: 5px;}
+		div.splash_submenu2 h1 {text-transform: lowercase; margin-bottom: 5px;}
+		div.splash_submenu2 li {height: auto; margin-bottom: 5px;}
+		div.splash_submenu2 li:hover {background-color: transparent;}
+		div.splash_submenu2 a {font-size: 12px; line-height: 14px; text-transform: none; background: none !important; padding: 3px 15px 3px 25px; color: #585858;}
+		div.splash_submenu2 a:hover {color: #000000;}
+
+		ul#splash_mainmenu > li:nth-of-type(5) div.splash_submenu,
+		ul#splash_mainmenu > li:nth-of-type(6) div.splash_submenu,
+		ul#splash_mainmenu > li:last-of-type div.splash_submenu {top: auto; bottom: 0; border-radius: 5px 5px 5px 0;}
+
+		ul.splash_textlist li {height: auto;}
+		ul.splash_textlist a {font-size: 12px; line-height: 14px; text-transform: none; background: none; padding: 3px 15px 3px 25px;}
+
+		#splash_right {width: 756px; height: 580px; float: left; overflow: hidden; border-radius: 28px;}
+		#splash_slider {width: 5292px;}
+		#splash_slide1, #splash_slide2, #splash_slide3, #splash_slide4, #splash_slide5, #splash_slide6, #splash_slide7 {width: 756px; height: 580px; float: left;}
+		#splash_slide1 {background: #000 url(/images/filter-1.jpg) center center no-repeat;}
+		#splash_slide2 {background: #000 url(/images/filter-2.jpg) center center no-repeat;}
+		#splash_slide3 {background: #000 url(/images/filter-3.jpg) center center no-repeat;}
+		#splash_slide4 {background: #000 url(/images/filter-4.jpg) center center no-repeat;}
+		#splash_slide5 {background: #000 url(/images/filter-5.jpg) center center no-repeat;}
+		#splash_slide6 {background: #000 url(/images/filter-6.jpg) center center no-repeat;}
+		#splash_slide7 {background: #000 url(/images/filter-7.jpg) center center no-repeat;}
+
+		.clearboth {clear: both;}
 
 /* ===========================================
 	MISC

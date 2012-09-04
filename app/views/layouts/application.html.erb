@@ -19,6 +19,9 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
 	</script>
+
+	<script type="text/javascript" src="//use.typekit.net/drd0hmi.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body> 
 <div id="fb-root"></div>
@@ -36,8 +39,8 @@
 </script>
 
 <div id='wrapper' role='main'> 
-	<div id="browser"><p>the summer project website works best in the latest versions of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/fx/">Firefox</a> and <a href="http://www.apple.com/safari/">Safari</a></p></div>
-	<section id='home' role='banner'> 
+	<div id="browser" style="display: none;"><p>the summer project website works best in the latest versions of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/fx/">Firefox</a> and <a href="http://www.apple.com/safari/">Safari</a></p></div>
+	<section id='home' role='banner' style="display: none;"> 
 		<h2 id='logo'>
 			<% if current_page?(root_url) %>
 				<%= link_to '', "#home" %>
@@ -51,7 +54,7 @@
 	</div>
 </div> 
 <nav id='nav' role='navigation'> 
-<ul class='banner'> 
+<ul class='banner' <% if current_page?(root_url) %>style="display: none;"<% end %>> 
 <li>
 <% if  current_page?(root_url) %>
 <%= link_to image_tag("nav/explore.png"), "#projects" %>
@@ -74,23 +77,25 @@
 <% end  %>
 </ul> 
 <div id="stitch">
-<ul class='landing'> 
-<li><%= link_to image_tag("nav/whatissp.png"), '/what-is-a-summer-project' %></li> 
-<li><%= link_to image_tag("nav/projects.png"), '/projects' %></li> 
-<li><%= link_to image_tag("nav/guide.png"), '/guide' %></li>
-<li><% if current_page?(root_url) %> 
-			<%= link_to image_tag("nav/status.png"), '#calendar' %>
-		<% else %>
-			<%= link_to image_tag("nav/status.png"), root_url + "#calendar" %>
-		<% end %>
-</li> 
-<li><%= link_to image_tag("nav/accepted.png"), '/accepted' %></li> 
-<li style="margin-left:160px;"><%= link_to image_tag("nav/aboutcru.png"), '/about-cru' %></li> 
-<li><%= link_to image_tag("nav/parents.png"), '/parents' %></li> 
-<li><%= link_to image_tag("nav/faq.png"), '/faq' %></li> 
-<li><%= link_to image_tag("nav/contact.png"), '/contact' %></li> 
-<li><fb:like href="https://www.facebook.com/summerproject" send="false" layout="button_count" style="margin-top:7px;" send="false" layout="button_count" width="75" show_faces="false"></fb:like></li> 
-</ul> 
+	<div class="landing_wrap">
+		<ul class='landing'> 
+		<li><%= link_to image_tag("nav/whatissp.png"), '/what-is-a-summer-project' %></li> 
+		<li><%= link_to image_tag("nav/projects.png"), '/projects' %></li> 
+		<li><%= link_to image_tag("nav/guide.png"), '/guide' %></li>
+		<li><% if current_page?(root_url) %> 
+					<%= link_to image_tag("nav/status.png"), '#calendar' %>
+				<% else %>
+					<%= link_to image_tag("nav/status.png"), root_url + "#calendar" %>
+				<% end %>
+		</li> 
+		<li><%= link_to image_tag("nav/accepted.png"), '/accepted' %></li> 
+		<li><%= link_to image_tag("nav/aboutcru.png"), '/about-cru' %></li> 
+		<li><%= link_to image_tag("nav/parents.png"), '/parents' %></li> 
+		<li><%= link_to image_tag("nav/faq.png"), '/faq' %></li> 
+		<li><%= link_to image_tag("nav/contact.png"), '/contact' %></li> 
+		<li style="display: none;"><fb:like href="https://www.facebook.com/summerproject" send="false" layout="button_count" style="margin-top:7px;" send="false" layout="button_count" width="75" show_faces="false"></fb:like></li> 
+		</ul> 
+	</div>
 </div>
 
 </nav> 

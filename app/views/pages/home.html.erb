@@ -1,112 +1,157 @@
-<section id='polaroid' class="fabric"> 
-	<div id="polaroidcontainer">
-		<div class="polaroid">
-			<%= image_tag('polaroid/Polaroid-1.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/Polaroid-2.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-3.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-4.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-5.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-6.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-7.jpg') %>
-		</div>	
+<section id="pageHeader">
+	<div class="container" style=" width: 950px;">
+	  <div id="headerLeft">
+	    <img src="images/logo.png" width="266" height="168" alt="" id="logo">
+	    <img src="images/letsgo.png" width="168" height="168" alt="" id="letsgo">
+	  </div>
+	  <div id="headerRight">
+	    <div id="smlogin"><a href="#">log in</a></div>
+	    <div id="sliderWrapper">
+	      <div id="sliderNav">
+	        <a href="#"></a>
+	        <a href="#"></a>
+	        <a href="#"></a>
+	      </div>
+	      <div id="slider"></div>
+	    </div>
+	    <div id="links"><a href="#"><img src="/images/explore.png" width="157" height="50" alt=""></a><a href="#"><img src="images/apply.png" width="127" height="43" alt=""></a></div>
+	  </div>
 	</div>
-</section> 
+</section>
 
-<section id="projects"> 
-	<div id="homestitch"></div>
-	<div class="container" >
-		<div id="slidemain">
-			<div id="slides">
-				<div class="slides_container">
-					<div class="slide">
-						<h1>FILTER THROUGH PROJECTS<br/>by GEOGRAPHY</h1>
-						<div class='cols' style="margin:60px 50px 0 100px;">
-							<%= link_to image_tag('slide/us.png'), '/projects?country=United+States' %>
-							<%= link_to "/projects?country=United+States" do %>
-								<h2>In the<br/>United States</h2>
-							<% end %>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/international.png'), '/projects?world_region=eastern+europe,western+europe,east+asia,south+asia,southeast+asia,NAME,PACT,Francophone+Africa,Southern+and+Eastern+Africa,Nigeria,Latin+America,South+America,Australia,South+Pacific' %>
-							<%= link_to "/projects?world_region=eastern+europe,western+europe,east+asia,south+asia,southeast+asia,NAME,PACT,Francophone+Africa,Southern+and+Eastern+Africa,Nigeria,Latin+America,South+America,Australia,South+Pacific" do %>
-								<h2>The Rest<br/>of the world</h2>
-							<% end %>
-						</div>
-					</div>
-					<div class="slide">
-						<h1>FILTER THROUGH PROJECTS<br/>by their length</h1>
-						<div class='cols'>
-							<%= link_to image_tag('slide/1-2weeks.png'), '/projects?from_weeks=1&to_weeks=2' %>
-							<a href='/projects?from_weeks=1&to_weeks=2'><h2>a little bit<br/>of time</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/3-5weeks.png'), '/projects?from_weeks=3&to_weeks=5' %>
-							<a href='/projects?from_weeks=3&to_weeks=5'><h2>about a<br/>month</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/7-12weeks.png'), '/projects?from_weeks=6&to_weeks=12' %>
-							<a href='/projects?from_weeks=6&to_weeks=12'><h2>the whole<br/>summer</h2></a>
-						</div>
-					</div>
-					<div class="slide">
-						<h1>FILTER THROUGH PROJECTS<br/>by their environment</h1>
-						<div class='cols'>
-							<%= link_to image_tag('slide/city.png'), '/projects?focus=11' %>
-							<a href='/projects?focus=11'><h2>In the City</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/beach.png'), '/projects?focus=2' %>
-							<a href='/projects?focus=2'><h2>On the Beach</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/mountains.png'), '/projects?id=326,335,338,343,391,406,409,426,433,532,630,631,709,749' %>
-							<a href='/projects?id=326,335,338,343,391,406,409,426,433,532,630,631,709,749'><h2>Mountains</h2></a>
-						</div>
-					</div>
-					<div class="slide">
-						<h1>FILTER THROUGH PROJECTS<br/>by their options</h1>
-						<div class='cols'>
-							<%= link_to image_tag('slide/intern.png'), '/projects?focus=12' %>
-							<a href='/projects?focus=12'><h2>Office<br/>Internship</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/job.png'), '/projects?job=1' %>
-							<a href='/projects?job=1'><h2>You can<br/>get a job</h2></a>
-							<h3></h3>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/greek.png'), '/projects?focus=8' %>
-							<a href='/projects?focus=8'><h2>Work with<br/>Greek Students</h2></a>
-						</div>
-					</div>
-					<div class="slide">
-						<h1>CHECK OUT ALL THE OTHER<br/>SUMMER PROJECTS</h1>
-						<div class='cols' style=" width:300px; margin-right:45px;">
-							<%= link_to image_tag('slide/ethnic.png'), '/projects?focus=3,4,5,7,22' %>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/opportunities.png'), '/projects' %>
-						</div>
-					</div>
-				</div>
-				<a href="" class="prev"><h2>&lsaquo;&lsaquo;</h2></a>
-				<a href="" class="next"><h2>&rsaquo;&rsaquo;</h2></a>
-			</div>
-		</div>
+
+<section id="splash" class="fabric">
+	<div class="container" style="width: 950px;">
+		<div id="splash_left">
+	    <ul id="splash_mainmenu">
+	      <li>
+	        <a href="#" id="splash_nav1"><img src="/images/icon42_world.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Geography</h2>
+	          <ul id="splash_geo">
+	            <li><a href="#">In the US</a></li>
+	            <li><a href="#" style="line-height: 21px !important;">Around the<br>World</a></li>
+	            <li><a href="#">Via a Map</a></li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav2"><img src="/images/icon42_city.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Environment</h2>
+	          <ul id="splash_env">
+	            <li>
+	              <a href="#">In the City</a>
+	              <div class="splash_submenu2">
+	                <h1>In the City</h1>
+	                <ul>
+	                  <li><a href="#">Alaska: Anchorage</a></li>
+	                  <li><a href="#">Alaska: Juneau Men's and Women's Summer Projects</a></li>
+	                  <li><a href="#">Charleston Historic Summer Project</a></li>
+	                  <li><a href="#">Crossroads in Chicago</a></li>
+	                  <li><a href="#">Impact iMan Summer Adventure</a></li>
+	                 </ul>
+	               </div>
+	            </li>
+	            <li><a href="#">On the Beach</a></li>
+	            <li><a href="#" style="line-height: 21px !important;">In the<br>Mountains</a></li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav3"><img src="/images/icon42_options.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Options</h2>
+	          <ul id="splash_opt">
+	            <li><a href="#" style="line-height: 21px !important;">Office<br>Internship</a></li>
+	            <li><a href="#">Get a Job</a></li>
+	            <li><a href="#" style="line-height: 21px !important;">Work with<br>Greek Students</a></li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav4"><img src="/images/icon42_focus.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Ministry Focus</h2>
+	          <ul class="splash_textlist">
+	            <li><a href="#">African American community</a></li>
+	            <li><a href="#">Art community</a></li>
+	            <li><a href="#">Art, Music, Film, Media</a></li>
+	            <li><a href="#">Asian American community</a></li>
+	            <li><a href="#">Athletes</a></li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav5"><img src="/images/icon42_length.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Length</h2>
+	          <ul id="splash_len">
+	            <li><a href="#" style="line-height: 21px !important;">A Little Bit<br>of Time</a></li>
+	            <li><a href="#" style="line-height: 21px !important;">About a<br>Month</a></li>
+	            <li><a href="#" style="line-height: 21px !important;">The Whole<br>Summer</a></li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav6"><img src="/images/icon42_calendar.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Calendar</h2>
+	          <p>Note: Choosing too large of a date range<br />may result in the list failing to load.</p>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav7"><img src="/images/icon42_search.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <form>
+	            <input type="text" placeholder="SEARCH BY PROJECT NAME" />
+	          </form>
+	        </div>
+	      </li>
+	    </ul>
+	  </div>
+	  <div id="splash_right">
+	    <div id="splash_slider">
+	      <div id="splash_slide1"></div>
+	      <div id="splash_slide2"></div>
+	      <div id="splash_slide3"></div>
+	      <div id="splash_slide4"></div>
+	      <div id="splash_slide5"></div>
+	      <div id="splash_slide6"></div>
+	      <div id="splash_slide7"></div>
+	    </div>
+	  </div>
+  	<div class="clearboth"></div>
 	</div>
-</section> 
+</section>
+
+<script type="text/javascript">
+    $("ul#splash_mainmenu div.splash_submenu").css({display: "none"}); // Opera Fix
+		$("ul#splash_mainmenu li").hover(function(){
+		  $(this).find('div:first').show(); },function(){ $(this).find('div:first').hide();
+		});
+    $("ul#splash_mainmenu ul div.splash_submenu2").css({display: "none"}); // Opera Fix
+		$("ul#splash_mainmenu ul li").hover(function(){
+		  $(this).find('div:first').show(); },function(){ $(this).find('div:first').hide();
+		});
+</script>
+
+<script type="text/javascript">
+    $("#splash_nav1").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"0"});});
+    $("#splash_nav2").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-756px"});});
+    $("#splash_nav3").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-1512px"});});
+    $("#splash_nav4").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-2268px"});});
+    $("#splash_nav5").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-3024px"});});
+    $("#splash_nav6").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-3780px"});});
+    $("#splash_nav7").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-4536px"});});
+</script>
+
 
 <section id="decision"> 
 	<div class="ribbon"><div class="container" title="Back to Top"><a href="#home" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
