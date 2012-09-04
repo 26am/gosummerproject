@@ -1,0 +1,109 @@
+<section id='polaroid' class="fabric"> 
+	<div id="polaroidcontainer">
+		<div class="polaroid">
+			<%= image_tag('polaroid/Polaroid-1.jpg') %>
+		</div>
+		<div class="polaroid">
+			<%= image_tag('polaroid/Polaroid-2.jpg') %>
+		</div>
+		<div class="polaroid">
+			<%= image_tag('polaroid/polaroid-3.jpg') %>
+		</div>
+		<div class="polaroid">
+			<%= image_tag('polaroid/polaroid-4.jpg') %>
+		</div>
+		<div class="polaroid">
+			<%= image_tag('polaroid/polaroid-5.jpg') %>
+		</div>
+		<div class="polaroid">
+			<%= image_tag('polaroid/polaroid-6.jpg') %>
+		</div>
+		<div class="polaroid">
+			<%= image_tag('polaroid/polaroid-7.jpg') %>
+		</div>	
+	</div>
+</section> 
+
+<section id="projects"> 
+	<div id="homestitch"></div>
+	<div class="container" >
+		<div id="slidemain">
+			<div id="slides">
+				<div class="slides_container">
+					<div class="slide">
+						<h1>FILTER THROUGH PROJECTS<br/>by GEOGRAPHY</h1>
+						<div class='cols' style="margin:60px 50px 0 100px;">
+							<%= link_to image_tag('slide/us.png'), '/projects?country=United+States' %>
+							<%= link_to "/projects?country=United+States" do %>
+								<h2>In the<br/>United States</h2>
+							<% end %>
+						</div>
+						<div class='cols'>
+							<%= link_to image_tag('slide/international.png'), '/projects?world_region=eastern+europe,western+europe,east+asia,south+asia,southeast+asia,NAME,PACT,Francophone+Africa,Southern+and+Eastern+Africa,Nigeria,Latin+America,South+America,Australia,South+Pacific' %>
+							<%= link_to "/projects?world_region=eastern+europe,western+europe,east+asia,south+asia,southeast+asia,NAME,PACT,Francophone+Africa,Southern+and+Eastern+Africa,Nigeria,Latin+America,South+America,Australia,South+Pacific" do %>
+								<h2>The Rest<br/>of the world</h2>
+							<% end %>
+						</div>
+					</div>
+					<div class="slide">
+						<h1>FILTER THROUGH PROJECTS<br/>by their length</h1>
+						<div class='cols'>
+							<%= link_to image_tag('slide/1-2weeks.png'), '/projects?from_weeks=1&to_weeks=2' %>
+							<a href='/projects?from_weeks=1&to_weeks=2'><h2>a little bit<br/>of time</h2></a>
+						</div>
+						<div class='cols'>
+							<%= link_to image_tag('slide/3-5weeks.png'), '/projects?from_weeks=3&to_weeks=5' %>
+							<a href='/projects?from_weeks=3&to_weeks=5'><h2>about a<br/>month</h2></a>
+						</div>
+						<div class='cols'>
+							<%= link_to image_tag('slide/7-12weeks.png'), '/projects?from_weeks=6&to_weeks=12' %>
+							<a href='/projects?from_weeks=6&to_weeks=12'><h2>the whole<br/>summer</h2></a>
+						</div>
+					</div>
+					<div class="slide">
+						<h1>FILTER THROUGH PROJECTS<br/>by their environment</h1>
+						<div class='cols'>
+							<%= link_to image_tag('slide/city.png'), '/projects?focus=11' %>
+							<a href='/projects?focus=11'><h2>In the City</h2></a>
+						</div>
+						<div class='cols'>
+							<%= link_to image_tag('slide/beach.png'), '/projects?focus=2' %>
+							<a href='/projects?focus=2'><h2>On the Beach</h2></a>
+						</div>
+						<div class='cols'>
+							<%= link_to image_tag('slide/mountains.png'), '/projects?id=326,335,338,343,391,406,409,426,433,532,630,631,709,749' %>
+							<a href='/projects?id=326,335,338,343,391,406,409,426,433,532,630,631,709,749'><h2>Mountains</h2></a>
+						</div>
+					</div>
+					<div class="slide">
+						<h1>FILTER THROUGH PROJECTS<br/>by their options</h1>
+						<div class='cols'>
+							<%= link_to image_tag('slide/intern.png'), '/projects?focus=12' %>
+							<a href='/projects?focus=12'><h2>Office<br/>Internship</h2></a>
+						</div>
+						<div class='cols'>
+							<%= link_to image_tag('slide/job.png'), '/projects?job=1' %>
+							<a href='/projects?job=1'><h2>You can<br/>get a job</h2></a>
+							<h3></h3>
+						</div>
+						<div class='cols'>
+							<%= link_to image_tag('slide/greek.png'), '/projects?focus=8' %>
+							<a href='/projects?focus=8'><h2>Work with<br/>Greek Students</h2></a>
+						</div>
+					</div>
+					<div class="slide">
+						<h1>CHECK OUT ALL THE OTHER<br/>SUMMER PROJECTS</h1>
+						<div class='cols' style=" width:300px; margin-right:45px;">
+							<%= link_to image_tag('slide/ethnic.png'), '/projects?focus=3,4,5,7,22' %>
+						</div>
+						<div class='cols'>
+							<%= link_to image_tag('slide/opportunities.png'), '/projects' %>
+						</div>
+					</div>
+				</div>
+				<a href="" class="prev"><h2>&lsaquo;&lsaquo;</h2></a>
+				<a href="" class="next"><h2>&rsaquo;&rsaquo;</h2></a>
+			</div>
+		</div>
+	</div>
+</section> 
