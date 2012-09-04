@@ -103,7 +103,7 @@ class ProjectsController < ApplicationController
         if conditions[0].empty?
           @projects = []
         else
-          @projects = SpProject.find(:all, 
+          @projects = SpProject.current.find(:all, 
                                       :include => [:primary_ministry_focus, :ministry_focuses],
                                       :conditions => conditions,
                                       :order => 'sp_projects.name, sp_projects.year')
@@ -117,7 +117,7 @@ class ProjectsController < ApplicationController
   
   def markers
     conditions = basic_conditions
-    @projects = SpProject.where(conditions[0].flatten.join(" AND "), conditions[1])
+    @projects = SpProject.current.where(conditions[0].flatten.join(" AND "), conditions[1])
     render :layout => false
   end
 
@@ -162,13 +162,10 @@ protected
   end
   
   def basic_conditions
-    @year = 2012
+    @year = 2013
     conditions = [[],[]]
     conditions[0] << "#{SpProject.table_name}.show_on_website = 1"
-    conditions[0] << "#{SpProject.table_name}.year = ?"
-    conditions[0] << "#{SpProject.table_name}.project_status = 'open'"
     conditions[0] << "(#{SpProject.table_name}.current_students_men + #{SpProject.table_name}.current_students_women + #{SpProject.table_name}.current_applicants_men + #{SpProject.table_name}.current_applicants_women) < (#{SpProject.table_name}.max_student_men_applicants + #{SpProject.table_name}.max_student_women_applicants)"
-    conditions[1] << @year
     conditions
   end
 

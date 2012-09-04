@@ -14,7 +14,7 @@ jQuery(function () {
 		  scrollTime	  = 600,
 		  openTime      = 600,
 		  completeTime  = 1200,
-		  siteName      = "Summer Project 2012",
+		  siteName      = "Summer Project 2013",
 		  scrollElement = "html,body";
 	// Initialize waypoints
 	$("#wrapper > section").waypoint({ offset: viewportTop });
