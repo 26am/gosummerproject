@@ -3,10 +3,10 @@ begin
 rescue LoadError
 end
 class SpProject < ActiveRecord::Base
-  unloadable
+  establish_connection :uscm
+
   #  image_accessor :logo
 
-  # SP-298
   has_many :sp_designation_numbers
 
   belongs_to :created_by, :class_name => "::Person", :foreign_key => "created_by_id"
@@ -64,7 +64,7 @@ class SpProject < ActiveRecord::Base
   scope :with_partner, proc {|partner| {:conditions => ["primary_partner IN(?) OR secondary_partner IN(?) OR tertiary_partner IN(?)", partner, partner, partner]}}
   scope :show_on_website, where(:show_on_website => true, :project_status => 'open')
   scope :uses_application, where(:use_provided_application => true)
-  scope :current, where("project_status = 'open' AND open_application_date <= ? AND start_date >= ?", Date.today, Date.today)
+  scope :current, where("project_status = 'open'")
   scope :open, where("project_status = 'open'")
   scope :ascend_by_name, order(:name)
   scope :descend_by_name, order("name desc")
@@ -290,6 +290,14 @@ class SpProject < ActiveRecord::Base
     apd_name_non_secure if (country_status == 'open' && apd && !apd.is_secure?)
   end
 
+  def opd_name_non_secure
+    opd.informal_full_name if opd
+  end
+
+  def opd_name
+    opd_name_non_secure if (country_status == 'open' && opd && !opd.is_secure?)
+  end
+
   def pd_email_non_secure
     pd.current_address.email if pd && pd.current_address
   end
@@ -304,6 +312,14 @@ class SpProject < ActiveRecord::Base
 
   def apd_email
     apd_email_non_secure if (country_status == 'open' && apd && !apd.is_secure?)
+  end
+
+  def opd_email_non_secure
+    opd.current_address.email if opd && opd.current_address
+  end
+
+  def opd_email
+    opd_email_non_secure if (country_status == 'open' && opd && !opd.is_secure?)
   end
 
   def primary_focus_name
