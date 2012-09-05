@@ -28,10 +28,12 @@ section { text-align: left; overflow:hidden; height:100%; width: 100%; margin: 0
 /* ===========================================
 	NAVIGATION
 ============================================== */
-#nav { top:353px; background:#FFF; width:100%; position: absolute; z-index: 1000; -moz-box-shadow: 0px 8px 8px -8px #999;-webkit-box-shadow: 0px 8px 8px -8px #999;box-shadow: 0px 8px 8px -8px #999; overflow:visible; border:none; }
+#nav { top:278px; background:#FFF; width:100%; position: absolute; z-index: 1000; -moz-box-shadow: 0px 8px 8px -8px #999;-webkit-box-shadow: 0px 8px 8px -8px #999;box-shadow: 0px 8px 8px -8px #999; overflow:visible; border:none; }
 #nav  ul {margin:auto; padding:0; width: 960px; }
 #nav .banner { height:85px; }
 #stitch { height:40px; background:url('/images/nav/stitch.jpg') repeat-x; }
+#uppernav {width: 1000px; height: 75px; margin: 0 auto; position: relative;}
+#uppernav #links {float: right; margin-top: 10px; margin-right: 30px;}
 .circle, #nav .banner a.circle, #nav .banner a.circle:hover {  border: 0; background:url('/images/nav/circle.png'); height:168px; width:132px;}
 
 
@@ -44,7 +46,7 @@ section { text-align: left; overflow:hidden; height:100%; width: 100%; margin: 0
 #nav.active .banner ul { *position: absolute !important; *top: 345px !important; }
 #nav.active .banner { *position: absolute !important; *top: 345px !important; }
 
-#nav .landing_wrap {width: 1000px; margin: 0 auto;}
+#nav .landing_wrap {width: 950px; margin: 0 auto;}
 #nav .landing { height:40px; float: right; width: auto;}
 #nav .landing img { vertical-align:top; margin:10px 2px; border:0; outline: none; }
 #nav .landing a {opacity:0.6; filter:alpha(opacity=60); }
@@ -154,7 +156,18 @@ input:-webkit-input-placeholder, input:-moz-placeholder {color:#CCC;}
 ============================================== */
 .col {width:250px; float:left; text-align:center; margin:15px auto 0px auto; padding:0 8px;}
 .col h3 { font-size:14px;} .col h4 { font-size:12px; padding-top:5px;}
-.col img {width: 150px; height: 150px;margin-bottom: 10px; -webkit-transform: rotate(-2deg); -moz-transform: rotate(-2deg);}
+.col img {width: 150px; height: 150px;margin-bottom: 10px; -webkit-transform: rotate(-2deg); -moz-transform: rotate(-2deg); 
+  -webkit-transition-duration: 400ms;
+  -webkit-transition-property: transform;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-duration: 400ms;
+  -moz-transition-property: transform;
+  -moz-transition-timing-function: ease;
+  -o-transition-duration: 400ms;
+  -o-transition-property: transform;
+  -o-transition-timing-function: ease;
+  }
+.col img:hover {-webkit-transform: rotate(2deg); -moz-transform: rotate(2deg);}
 .storytag {background:url('/images/tag.png') no-repeat; width:246px; height:63px; padding:8px 0 0 0; margin: -20px 0 0 0; font-size:20px; text-decoration:none; color:#eee; z-index:1;}
 .storytag h2 {line-height: 1em; font-size: 20px; margin-top: 3px;}
 
@@ -180,7 +193,7 @@ ul.links .head a {color: #EC1D3B; font-size: 15px; font-family: 'Rockwell';}
 	-webkit-box-shadow: inset 0 0 1px 3px #CCC;
 	box-shadow: inset 0 0 1px 3px #CCC;
 	background:url('/images/stone.png') #ECECEC;
-	margin-top:150px;
+	margin-top:50px;
 }
 
 #page .container, #exploreProj .container, #contactForm .container { margin-top:20px; padding-bottom:40px; width:850px; }
@@ -268,9 +281,9 @@ ul.links .head a {color: #EC1D3B; font-size: 15px; font-family: 'Rockwell';}
 
 
 	/* body {margin: 0; padding: 0; background-color: #eee; font-family: 'Rockwell', 'kulturista-web', "Palatino Linotype", "Book Antiqua", Palatino, serif;} */
-		#pageHeader {background: white url(/images/stitching.png) center bottom repeat-x; height: 393px; padding: 0 40px;}
-		#headerLeft {float: left; padding-top: 47px; width: 266px; height: 336px; text-align: center; position: relative;}
-		  #letsgo {position: absolute; bottom: -17px; left: 55px; z-index: 1001;}
+		#pageHeader {background: white url(/images/stitching.png) center bottom repeat-x; height: 393px; padding: 0 0px;}
+		#headerLeft {float: left; padding-top: 47px; width: 266px; height: 336px; text-align: center; position: relative; padding-left: 15px;}
+		  #letsgo {position: absolute; bottom: -47px; left: 89px; z-index: 1001;}
 		#headerRight {float: right; padding-right: 15px; width: 440px;}
 		  #smlogin {margin: 10px 0; font-size: 14px; text-align: right; font-family: 'Rockwell', 'kulturista-web', "Palatino Linotype", "Book Antiqua", Palatino, serif;}
 		  #smlogin a {color: #58585a; text-decoration: none;}

@@ -47,7 +47,7 @@
 			}
             // attach panel
             node.css({
-                "top": "353px",
+                "top": "278px",
                 "position": "absolute"
             });
             if (o.afterDetachCSSClass != "") {
