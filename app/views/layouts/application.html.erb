@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag 'jquery.min.js' %>
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-	<%= javascript_include_tag 'jquery.stickyPanel', 'jquery.waypoints', 'slides.min.jquery', 'jquery.polaroid', :defaults %>
+	<%= javascript_include_tag 'jquery.tn3lite.min.js', 'jquery.stickyPanel', 'jquery.waypoints', 'slides.min.jquery', 'jquery.polaroid', :defaults %>
 	<script src="http://connect.facebook.net/en_US/all.js#appId=169422786455893&amp;xfbml=1"></script>
   <%= csrf_meta_tag %>
 	<script type="text/javascript">
@@ -19,6 +19,44 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
 	</script>
+
+  <script type="text/javascript">
+  	$(document).ready(function() {
+  		//Thumbnailer.config.shaderOpacity = 1;
+  		var tn1 = $('.mygallery').tn3({
+        skinDir:"/stylesheets/skins",
+        imageClick:"fullscreen",
+        image:{
+          maxZoom:10,
+          crop:true,
+          clickEvent:"dblclick",
+          transitions:[{
+            type:"blinds"
+          },{
+            type:"grid"
+          },{
+            type:"grid",
+            duration:460,
+            easing:"easeInQuad",
+            gridX:1,
+            gridY:8,
+            // flat, diagonal, circle, random
+            sort:"random",
+            sortReverse:false,
+            diagonalStart:"bl",
+            // fade, scale
+            method:"scale",
+            partDuration:360,
+            partEasing:"easeOutSine",
+            partDirection:"left"
+          }]
+        }
+      });
+  	});
+  </script>
+
+  <link type="text/css" rel="stylesheet" href="/stylesheets/skins/tn3/tn3.css"></link>
+
 
 	<script type="text/javascript" src="//use.typekit.net/drd0hmi.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>

@@ -2,27 +2,44 @@
 <section id="photos" class="fabric"> 
 	<div id="pageBox">
 		<div class="container">
-			<div id="slidemain">
-				<div id="slides">
-					<div class="slides_container">
-				    <% @page.images.each do |i| %>
-						<div class="slide">
-			       	<%= image_tag(i.thumbnail("840x380").url) %>
-			     	</div>
-			   		<% end %>
-			 		</div>
-				</div>
-			</div>
+			
+			
+			<div class="mygallery">
+      	<div class="tn3 album">
+      	    <ol>
+      	      
+      	      <% @page.images.each do |i| %>
+      	      <li>
+          		    <h4><!-- title --></h4>
+          		    <div class="tn3 description"><!-- desc --></div>
+          		    <a href="<%= i.thumbnail("850x850").url %>">
+          			  <%= image_tag(i.thumbnail("35x35").url) %>
+          		    </a>
+          		</li>
+  			   		<% end %>
+      		
+      		</ol>
+      	</div>
+      </div>
+      <div class="clear"></div>
 			<%= raw @page.content_for(:body) %>
 			
 <% else %>
 <section id="page" class="fabric"> 
 	<div id="pageBox">
 		<div class="container">
-			<div id="sideBar">
-				<%= raw @page.content_for(:side_body) %>
-			</div>
-			<div id="Content">
+		  <% unless @page.content_for(:side_body).blank? %>
+			  <div id="sideBar">
+			    <audio controls="play,pause">
+            <source src="horse.ogg" type="audio/ogg" />
+            <source src="http://www.w3schools.com/html5/horse.ogg" type="audio/mp3" />
+            
+            Your browser does not support the audio tag.
+          </audio>
+  				<%= raw @page.content_for(:side_body) %>
+  			</div>
+			<% end %>
+			<div id="Content" <% unless @page.content_for(:side_body).blank? %><% else %>class="fullwidth"<% end %>>
 				<%= raw @page.content_for(:body) %>
 			</div>
 			<div class="clear"></div>

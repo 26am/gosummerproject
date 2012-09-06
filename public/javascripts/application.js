@@ -18,5 +18,5 @@ $(function(){
 	$('#faqAccordion').accordion({ autoHeight: false });
 });
 $(function(){
-  	$(".tipTip").tipTip({delay: 1});
+  	// $(".tipTip").tipTip({delay: 1});
 });
