@@ -349,16 +349,16 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 		ul.splash_textlist li {height: auto;}
 		ul.splash_textlist a {font-size: 12px; line-height: 14px; text-transform: none; background: none; padding: 3px 15px 3px 25px;}
 
-		#splash_right {width: 756px; height: 580px; float: left; overflow: hidden; border-radius: 28px;}
-		#splash_slider {width: 5292px;}
-		#splash_slide1, #splash_slide2, #splash_slide3, #splash_slide4, #splash_slide5, #splash_slide6, #splash_slide7 {width: 756px; height: 580px; float: left;}
-		#splash_slide1 {background: #000 url(/images/filter-1.jpg) center center no-repeat;}
-		#splash_slide2 {background: #000 url(/images/filter-2.jpg) center center no-repeat;}
-		#splash_slide3 {background: #000 url(/images/filter-3.jpg) center center no-repeat;}
-		#splash_slide4 {background: #000 url(/images/filter-4.jpg) center center no-repeat;}
-		#splash_slide5 {background: #000 url(/images/filter-5.jpg) center center no-repeat;}
-		#splash_slide6 {background: #000 url(/images/filter-6.jpg) center center no-repeat;}
-		#splash_slide7 {background: #000 url(/images/filter-7.jpg) center center no-repeat;}
+		#splash_right {width: 830px; height: 580px; float: left; overflow: hidden; border-radius: 28px;}
+		#splash_slider {width: 5810px;}
+		#splash_slide1, #splash_slide2, #splash_slide3, #splash_slide4, #splash_slide5, #splash_slide6, #splash_slide7 {width: 830px; height: 580px; float: left;}
+		#splash_slide1 {background: #000 url(/images/filter-1.png) center center no-repeat;}
+		#splash_slide2 {background: #000 url(/images/filter-2.png) center center no-repeat;}
+		#splash_slide3 {background: #000 url(/images/filter-3.png) center center no-repeat;}
+		#splash_slide4 {background: #000 url(/images/filter-4.png) center center no-repeat;}
+		#splash_slide5 {background: #000 url(/images/filter-5.png) center center no-repeat;}
+		#splash_slide6 {background: #000 url(/images/filter-6.png) center center no-repeat;}
+		#splash_slide7 {background: #000 url(/images/filter-7.png) center center no-repeat;}
 
 		.clearboth {clear: both;}
 
