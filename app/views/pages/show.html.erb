@@ -3,6 +3,7 @@
 	<div id="pageBox">
 		<div class="container">
 			
+			<h1><Summer Project Photo Album><%= @page[:title] %></h1>
 			
 			<div class="mygallery">
       	<div class="tn3 album">
@@ -10,8 +11,8 @@
       	      
       	      <% @page.images.each do |i| %>
       	      <li>
-          		    <h4><!-- title --></h4>
-          		    <div class="tn3 description"><!-- desc --></div>
+          		    <h4>Summer Project 2012</h4>
+          		    <div class="tn3 description">Images from 2012 Summer Projects</div>
           		    <a href="<%= i.thumbnail("850x850").url %>">
           			  <%= image_tag(i.thumbnail("35x35").url) %>
           		    </a>

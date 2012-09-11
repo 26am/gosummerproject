@@ -201,7 +201,8 @@ ul.links .head a {color: #EC1D3B; font-size: 15px; font-family: 'Rockwell';}
 body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padding-top: 1px;}
 #page #sideBar, #exploreProj #sideBar, #contactForm #sideBar { border-right: 2px dotted #ccc; float:left; margin-top:40px; padding-right:25px; width:220px; }
 #page #contentTop {margin-top:30px;}
-#page h1, #contactPage h1, #exploreProj h1 {color:#ec1d3b; margin-top:00px; text-align:left;}
+#page h1, #photos h1, #contactPage h1, #exploreProj h1 {color:#ec1d3b; margin-top:00px; text-align:left;}
+#photos h1 {margin-bottom: 1em; margin-top: .5em;}
 #page h2 {color:#00b2af;}
 #page h3 {color:#00b2af; margin-top:1em;}
 
