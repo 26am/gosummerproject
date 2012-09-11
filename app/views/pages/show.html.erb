@@ -30,12 +30,6 @@
 		<div class="container">
 		  <% unless @page.content_for(:side_body).blank? %>
 			  <div id="sideBar">
-			    <audio controls="play,pause">
-            <source src="horse.ogg" type="audio/ogg" />
-            <source src="http://www.w3schools.com/html5/horse.ogg" type="audio/mp3" />
-            
-            Your browser does not support the audio tag.
-          </audio>
   				<%= raw @page.content_for(:side_body) %>
   			</div>
 			<% end %>
@@ -47,3 +41,10 @@
 		</div>
 	</div>
 </section> 
+
+<script>
+$(document).ready(function() {
+	var contentHeight = $("#Content").height();
+	$("#sideBar").css("min-height", contentHeight);
+});
+</script>

@@ -5,7 +5,16 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag 'jquery.min.js' %>
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-	<%= javascript_include_tag 'jquery.tn3lite.min.js', 'jquery.stickyPanel', 'jquery.waypoints', 'slides.min.jquery', 'jquery.polaroid', :defaults %>
+	<style type="text/css" media="screen">
+		.slides_container {width:400px;			height: auto;			display:none;			padding-top: 28px;		}
+		.slides_container div {width:400px;			height:200px;			display:block;		}		
+		#sliderWrapper {position: relative;		}		
+		#sliderWrapper .pagination {list-style:none;			margin:0;			padding:0;			height: auto;			position: absolute;			top: 0;			right: 0;			width: auto;}
+		#sliderWrapper .pagination li {margin: 0 5px 0 0;		}
+		#sliderWrapper .pagination li a {color: #00abbd; background: #00abbd; border-radius: 10px; width: 16px; height: 16px; padding: 0;}
+		#sliderWrapper .pagination .current a {color:#ed1a3b;	background: #ed1a3b;}
+	</style>
+	<%= javascript_include_tag 'jquery.tn3.min.js', 'jquery.stickyPanel', 'jquery.waypoints', 'slides.min.jquery', 'jquery.polaroid', :defaults %>
 	<script src="http://connect.facebook.net/en_US/all.js#appId=169422786455893&amp;xfbml=1"></script>
   <%= csrf_meta_tag %>
 	<script type="text/javascript">
@@ -25,6 +34,7 @@
   		//Thumbnailer.config.shaderOpacity = 1;
   		var tn1 = $('.mygallery').tn3({
         skinDir:"/stylesheets/skins",
+				skin:"tn3a",
         imageClick:"fullscreen",
         image:{
           maxZoom:10,
@@ -55,7 +65,7 @@
   	});
   </script>
 
-  <link type="text/css" rel="stylesheet" href="/stylesheets/skins/tn3/tn3.css"></link>
+  <link type="text/css" rel="stylesheet" href="/stylesheets/skins/tn3a/tn3a.css"></link>
 
 
 	<script type="text/javascript" src="//use.typekit.net/drd0hmi.js"></script>
@@ -86,13 +96,22 @@
 		  <div id="headerRight">
 		    <div id="smlogin"><a href="#">log in</a></div>
 		    <div id="sliderWrapper">
-		      <div id="sliderNav">
-		        <a href="#"></a>
-		        <a href="#"></a>
-		        <a href="#"></a>
-		      </div>
-		      <div id="slider"></div>
+					<div class="slides_container">
+						<div><%= link_to(image_tag("video_slide1.png"), "https://www.facebook.com/summerproject?ref=stream") %></div>
+						<div><%= link_to(image_tag("video_slide2.png"), "https://www.facebook.com/summerproject?ref=stream") %> %></div>
+						<div><%= link_to(image_tag("video_slide3.png"), "/projects") %></div>
+					</div>
 		    </div>
+		
+				<script>
+					$(function(){
+						$('#sliderWrapper').slides({
+							preload: true,
+							generateNextPrev: false
+						});
+					});
+				</script>
+				
 		  </div>
 		</div>
 	</section>
