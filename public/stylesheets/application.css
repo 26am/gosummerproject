@@ -115,14 +115,15 @@ a.project_apply:hover {box-shadow: inset 0 -2px 7px #bbb;}
 #jan24 { background:url('/images/jan24.png') no-repeat; height:64px;}
 #feb24 { background:url('/images/feb24.png') no-repeat; height:64px;}
 #divide { background:url('/images/divide.png') no-repeat; height:64px;}
-#status {width: auto; text-align:left;  float: left; margin:40px 30px 0px 75px;}
+#status {width: 390px; text-align:left;  float: left; margin:40px 30px 0px 75px;}
 .services { width:69px; float:left; margin:10px 20px; text-align:center;}
 #login {background:#AAE2F3; height:150px; margin-top:0; -moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
 #forgotPass {font-size:12px; margin-left:15px; padding-top:10px;}
 
 input { height: 30px; margin:5px 15px; padding-left:5px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-family: sans-serif; font-size: 21px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;}
 #username {width: 315px;}
-#password {width: 200px;}
+#password {width: 200px; margin-right: 10px;}
+input#loginbtn {float: none; position: relative; top: -1px; margin: 0;}
 input[type=submit] { background-color:#108DA2; height:30px; width:100px; margin:-35px 15px; float:right; padding:0; font-family: 'Rockwell'; color:#FFF; font-size:21px; text-decoration:none; border:none; -moz-border-radius: 5px;border-radius: 5px;  text-decoration:none; -moz-transition: background 0.15s linear; -webkit-transition: background 0.15s linear; transition: background 0.15s linear;}
 input[type=submit]:hover { background-color:#666666;}
 input:-webkit-input-placeholder, input:-moz-placeholder {color:#CCC;}
@@ -138,6 +139,11 @@ input:-webkit-input-placeholder, input:-moz-placeholder {color:#CCC;}
 #camera {background:url('/images/camera.png') no-repeat; width:192px; height:192px;  }
 #video {background:url('/images/video.png') no-repeat; width:192px; height:192px; }
 #graphics {background:url('/images/graphics.png') no-repeat; width:192px; height:192px; }
+.graphicstable {width: 100%; border: 1px solid silver; margin: .5em 0;  padding: 0; border-radius: 0 0 8px 8px;}
+.graphicstable th {padding: .5em; background: #fff; border-bottom: 1px solid silver;}
+.graphicstable th h3 {margin: 0 !important;}
+.graphicstable td {text-align: center; padding: .5em;}
+.graphicstable td a {display: block; font-family: Helvetica, Arial; font-weight: bold; font-size: 12px; padding: 5px 0 10px;}
 .downloadtag {background:url('/images/tag.png') no-repeat; width:246px; height:63px; padding:7px 0 5px 0; margin: 15px 0 0 0;font-size:20px; text-decoration:none; color:#fff; }
 
 
@@ -199,6 +205,7 @@ ul.links .head a {color: #EC1D3B; font-size: 15px; font-family: 'Rockwell';}
 #page .container, #exploreProj .container, #contactForm .container { margin-top:20px; padding-bottom:40px; width:850px; }
 #page #Content, #exploreProj #Content, #contactForm #Content { float:right; margin:0 10px 0 10px; width:570px; padding-top: 40px; }
 body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padding-top: 1px;}
+.fullwidth h1 {margin-top: 1.5em !important;}
 #page #sideBar, #exploreProj #sideBar, #contactForm #sideBar { border-right: 2px dotted #ccc; float:left; margin-top:40px; padding-right:25px; width:220px; }
 #page #contentTop {margin-top:30px;}
 #page h1, #photos h1, #contactPage h1, #exploreProj h1 {color:#ec1d3b; margin-top:00px; text-align:left;}

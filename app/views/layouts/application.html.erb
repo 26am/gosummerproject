@@ -97,15 +97,15 @@
 <div id="uppernav">
 	<%= link_to(image_tag('/images/letsgo.png', :width => "168", :height => "168", :id => "letsgo"), "https://sp.campuscrusadeforchrist.com/apply") %>
 	<div id="links">
-		<%= link_to(image_tag('/images/explore.png', :width => "157", :height => "50"), "/projects") %>
-		<%= link_to(image_tag('/images/apply.png', :width => "127", :height => "43"), "https://sp.campuscrusadeforchrist.com/apply") %>
+		<%= link_to(image_tag('/images/explore.png', :width => "157", :height => "50"), "/#splash") %>
+		<%= link_to(image_tag('/images/apply.png', :width => "127", :height => "43"), "/apply") %>
 	</div>
 </div>
 <div id="stitch">
 	<div class="landing_wrap">
 		<ul class='landing'> 
 		<li><%= link_to image_tag("nav/whatissp.png"), '/what-is-a-summer-project' %></li> 
-		<li><%= link_to image_tag("nav/projects.png"), '/projects' %></li> 
+		<li style="display: none;"><%= link_to image_tag("nav/projects.png"), '/projects' %></li> 
 		<li><%= link_to image_tag("nav/guide.png"), '/guide' %></li>
 		<li><% if current_page?(root_url) %> 
 					<%= link_to image_tag("nav/status.png"), '#calendar' %>
@@ -129,7 +129,7 @@
 	<div class="container" id='footer' role='contentinfo'> 
 	  <div id="footerlinks">
 	    <ul class="links">
-	      <li class="head"><%= link_to("Apply", "https://sp.campuscrusadeforchrist.com/apply") %></li>
+	      <li class="head"><%= link_to("Apply", "/apply") %></li>
         <li><%= link_to("Log In", "https://sp.campuscrusadeforchrist.com/apply") %></li> </li>
       </ul>
       <ul class="links">
@@ -150,7 +150,7 @@
         <li class="head"><%= link_to("Social Media","/#connect") %></li>
         <li><%= link_to("Facebook","http://www.facebook.com/summerproject") %></li>
         <li><%= link_to("Twitter","https://twitter.com/gosummerproject") %></li>
-        <li><%= link_to("Tumblr", "http://tumblr.com") %></li>
+        <li><%= link_to("Tumblr", "http://gosummerproject.tumblr.com/") %></li>
       </ul>
       <ul class="links">
         <li class="head"><%= link_to("Contact","/contact") %></li>
