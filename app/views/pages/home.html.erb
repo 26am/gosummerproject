@@ -1,6 +1,4 @@
-
-
-
+<% SpProject.order('sp_projects.name').tap do |projects| %>
 <section id="splash" class="fabric">
 	<div class="container" style="width: 950px;">
 		<div id="splash_left">
@@ -11,8 +9,29 @@
 	          <h1>Filter Projects</h1>
 	          <h2>By Geography</h2>
 	          <ul id="splash_geo">
-	            <li><a href="#">In the US</a></li>
-	            <li><a href="#" style="line-height: 21px !important;">Around the<br>World</a></li>
+              <li>
+                <a href="#">In the US</a>
+              	<div class="splash_submenu2">
+	                <h1>In the US</h1>
+                  <ul>
+                    <% projects.where(country: 'United States').each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+	                </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#" style="line-height: 21px !important;">Around the<br>World</a>
+                <div class="splash_submenu2">
+	                <h1>Around the World</h1>
+                  <ul>
+                    <% projects.where("country <> 'United States'").each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+	                </ul>
+                </div>
+
+              </li>
 	            <li><a href="#">Via a Map</a></li>
 	          </ul>
 	        </div>
@@ -27,17 +46,35 @@
 	              <a href="#">In the City</a>
 	              <div class="splash_submenu2">
 	                <h1>In the City</h1>
-	                <ul>
-	                  <li><a href="#">Alaska: Anchorage</a></li>
-	                  <li><a href="#">Alaska: Juneau Men's and Women's Summer Projects</a></li>
-	                  <li><a href="#">Charleston Historic Summer Project</a></li>
-	                  <li><a href="#">Crossroads in Chicago</a></li>
-	                  <li><a href="#">Impact iMan Summer Adventure</a></li>
-	                 </ul>
-	               </div>
+                  <ul>
+                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.name = 11").each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+                  </ul>
+	              </div>
 	            </li>
-	            <li><a href="#">On the Beach</a></li>
-	            <li><a href="#" style="line-height: 21px !important;">In the<br>Mountains</a></li>
+              <li>
+                <a href="#">On the Beach</a>
+	              <div class="splash_submenu2">
+	                <h1>On the Beach</h1>
+                  <ul>
+                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 2").each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+                  </ul>
+	              </div>
+              </li>
+              <li>
+                <a href="#" style="line-height: 21px !important;">In the<br>Mountains</a>
+	              <div class="splash_submenu2">
+	                <h1>In the<br>Mountains</h1>
+                  <ul>
+                    <% projects.where(id: [326,335,338,343,391,406,409,426,433,532,630,631,709,749]).each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+                  </ul>
+	              </div>
+              </li>
 	          </ul>
 	        </div>
 	      </li>
@@ -47,9 +84,39 @@
 	          <h1>Filter Projects</h1>
 	          <h2>By Options</h2>
 	          <ul id="splash_opt">
-	            <li><a href="#" style="line-height: 21px !important;">Office<br>Internship</a></li>
-	            <li><a href="#">Get a Job</a></li>
-	            <li><a href="#" style="line-height: 21px !important;">Work with<br>Greek Students</a></li>
+              <li>
+                <a href="#" style="line-height: 21px !important;">Office<br>Internship</a>
+                <div class="splash_submenu2">
+	                <h1>Office<br>Internship</h1>
+                  <ul>
+                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 12").each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+                  </ul>
+	              </div>
+              </li>
+              <li>
+                <a href="#">Get a Job</a>
+                <div class="splash_submenu2">
+	                <h1>Get a Job</h1>
+                  <ul>
+                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 1").each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+                  </ul>
+	              </div>
+              </li>
+              <li>
+                <a href="#" style="line-height: 21px !important;">Work with<br>Greek Students</a>
+                <div class="splash_submenu2">
+	                <h1>Work with<br>Greek Students</h1>
+                  <ul>
+                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 8").each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+                  </ul>
+	              </div>
+              </li>
 	          </ul>
 	        </div>
 	      </li>
@@ -58,13 +125,21 @@
 	        <div class="splash_submenu">
 	          <h1>Filter Projects</h1>
 	          <h2>By Ministry Focus</h2>
-	          <ul class="splash_textlist">
-	            <li><a href="#">African American community</a></li>
-	            <li><a href="#">Art community</a></li>
-	            <li><a href="#">Art, Music, Film, Media</a></li>
-	            <li><a href="#">Asian American community</a></li>
-	            <li><a href="#">Athletes</a></li>
-	          </ul>
+            <ul class="splash_textlist">
+              <% SpMinistryFocus.order(:name).each do |focus| %>
+                <li>
+                  <a href="#"><%= focus %></a>
+                  <div class="splash_submenu2">
+                    <h1><%= focus %></h1>
+                    <ul>
+                      <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = ?", focus.id).each do |p| %>
+                        <li><a href="#"><%= p.name %></a></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
 	        </div>
 	      </li>
 	      <li>
@@ -73,9 +148,39 @@
 	          <h1>Filter Projects</h1>
 	          <h2>By Length</h2>
 	          <ul id="splash_len">
-	            <li><a href="#" style="line-height: 21px !important;">A Little Bit<br>of Time</a></li>
-	            <li><a href="#" style="line-height: 21px !important;">About a<br>Month</a></li>
-	            <li><a href="#" style="line-height: 21px !important;">The Whole<br>Summer</a></li>
+              <li>
+                <a href="#" style="line-height: 21px !important;">A Little Bit<br>of Time</a>
+                <div class="splash_submenu2">
+                  <h1>A Little Bit<br>of Time</h1>
+                  <ul>
+                    <% projects.where("weeks >= 1 and weeks <= 2").each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#" style="line-height: 21px !important;">About a<br>Month</a>
+                <div class="splash_submenu2">
+                  <h1>About a<br>Month</h1>
+                  <ul>
+                    <% projects.where("weeks >= 3 and weeks <= 5").each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#" style="line-height: 21px !important;">The Whole<br>Summer</a>
+                <div class="splash_submenu2">
+                  <h1>The Whole<br>Summer</h1>
+                  <ul>
+                    <% projects.where("weeks >= 7 and weeks <= 12").each do |p| %>
+                      <li><a href="#"><%= p.name %></a></li>
+                    <% end %>
+                  </ul>
+                </div>
+              </li>
 	          </ul>
 	        </div>
 	      </li>
@@ -84,15 +189,20 @@
 	        <div class="splash_submenu">
 	          <h1>Filter Projects</h1>
 	          <h2>By Calendar</h2>
-	          <p>Note: Choosing too large of a date range<br />may result in the list failing to load.</p>
+            <p>Note: Choosing too large of a date range<br />may result in the list failing to load.</p>
+            <%= form_tag projects_path, method: :get do %>
+              <div>Start Date: <%= text_field_tag :start_date %></div>
+              <div>End Date: <%= text_field_tag :end_date %></div>
+              <div><%= submit_tag 'Go'%></div>
+            <% end %>
 	        </div>
 	      </li>
 	      <li>
-	        <a href="#" id="splash_nav7"><img src="/images/icon42_search.png" width="42" height="42" alt=""></a>
-	        <div class="splash_submenu">
-	          <form>
-	            <input type="text" placeholder="SEARCH BY PROJECT NAME" />
-	          </form>
+          <a href="#" id="splash_nav7"><img src="/images/icon42_search.png" width="42" height="42" alt=""></a>
+          <div class="splash_submenu">
+            <%= form_tag projects_path, method: :get do %>
+              <input type="text" name="name" placeholder="SEARCH BY PROJECT NAME" />
+            <% end %>
 	        </div>
 	      </li>
 	    </ul>
@@ -319,4 +429,5 @@
 			</div>
 		</div>
 	</div> 
-</section>
+  </section>
+<% end %>

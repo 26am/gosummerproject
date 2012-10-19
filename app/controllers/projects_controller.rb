@@ -162,7 +162,7 @@ protected
   end
   
   def basic_conditions
-    @year = 2012
+    @year = 2013
     conditions = [[],[]]
     conditions[0] << "#{SpProject.table_name}.show_on_website = 1"
     conditions[0] << "#{SpProject.table_name}.year = ?"
