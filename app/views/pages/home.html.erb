@@ -15,7 +15,7 @@
 	                <h1>In the US</h1>
                   <ul>
                     <% projects.where(country: 'United States').each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
 	                </ul>
                 </div>
@@ -26,7 +26,7 @@
 	                <h1>Around the World</h1>
                   <ul>
                     <% projects.where("country <> 'United States'").each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
 	                </ul>
                 </div>
@@ -48,7 +48,7 @@
 	                <h1>In the City</h1>
                   <ul>
                     <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.name = 11").each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
                   </ul>
 	              </div>
@@ -59,7 +59,7 @@
 	                <h1>On the Beach</h1>
                   <ul>
                     <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 2").each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
                   </ul>
 	              </div>
@@ -70,7 +70,7 @@
 	                <h1>In the<br>Mountains</h1>
                   <ul>
                     <% projects.where(id: [326,335,338,343,391,406,409,426,433,532,630,631,709,749]).each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
                   </ul>
 	              </div>
@@ -90,7 +90,7 @@
 	                <h1>Office<br>Internship</h1>
                   <ul>
                     <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 12").each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
                   </ul>
 	              </div>
@@ -101,7 +101,7 @@
 	                <h1>Get a Job</h1>
                   <ul>
                     <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 1").each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
                   </ul>
 	              </div>
@@ -112,7 +112,7 @@
 	                <h1>Work with<br>Greek Students</h1>
                   <ul>
                     <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 8").each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
                   </ul>
 	              </div>
@@ -133,7 +133,7 @@
                     <h1><%= focus %></h1>
                     <ul>
                       <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = ?", focus.id).each do |p| %>
-                        <li><a href="#"><%= p.name %></a></li>
+                        <li><%= link_to(p.name, project_path(p.id)) %></li>
                       <% end %>
                     </ul>
                   </div>
@@ -154,7 +154,7 @@
                   <h1>A Little Bit<br>of Time</h1>
                   <ul>
                     <% projects.where("weeks >= 1 and weeks <= 2").each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
                   </ul>
                 </div>
@@ -165,7 +165,7 @@
                   <h1>About a<br>Month</h1>
                   <ul>
                     <% projects.where("weeks >= 3 and weeks <= 5").each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
                   </ul>
                 </div>
@@ -176,7 +176,7 @@
                   <h1>The Whole<br>Summer</h1>
                   <ul>
                     <% projects.where("weeks >= 7 and weeks <= 12").each do |p| %>
-                      <li><a href="#"><%= p.name %></a></li>
+                      <li><%= link_to(p.name, project_path(p.id)) %></li>
                     <% end %>
                   </ul>
                 </div>
