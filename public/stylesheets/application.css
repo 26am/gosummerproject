@@ -367,6 +367,13 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 		#splash_slide6 {background: #000 url(/images/filter-6.png) center center no-repeat;}
 		#splash_slide7 {background: #000 url(/images/filter-7.png) center center no-repeat;}
 
+    #searchdate {margin: 0 16px}
+    #searchdate input[type=text] {width: 80px; display: block; height: 25px; }
+    #searchdate div.field {display: inline-block;float: left;}
+    #searchdate input[type=submit] {border: 0;width: 72px; float: none; display: block;margin-bottom: 1px; height: auto; font-size: 20px;}
+
+
+
 		.clearboth {clear: both;}
 
 /* ===========================================

@@ -190,11 +190,13 @@
 	          <h1>Filter Projects</h1>
 	          <h2>By Calendar</h2>
             <p>Note: Choosing too large of a date range<br />may result in the list failing to load.</p>
-            <%= form_tag projects_path, method: :get do %>
-              <div>Start Date: <%= text_field_tag :start_date %></div>
-              <div>End Date: <%= text_field_tag :end_date %></div>
-              <div><%= submit_tag 'Go'%></div>
-            <% end %>
+						<p>
+	            <%= form_tag projects_path, method: :get, :id => 'searchdate' do %>
+	              <div class="field">Start Date: <%= text_field_tag :start_date %></div>
+	              <div class="field">End Date: <%= text_field_tag :end_date %></div>
+	              <div><%= submit_tag 'Go'%></div>
+	            <% end %>
+						</p>
 	        </div>
 	      </li>
 	      <li>
