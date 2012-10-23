@@ -72,8 +72,7 @@
             <ul class="splash_textlist">
               <% SpMinistryFocus.order(:name).each do |focus| %>
                 <li>
-                  <a href="#"><%= focus %></a>
-                  
+                  <a href="http://gosummerproject.com/projects?focus=<%= focus.id %>" style="line-height: 21px !important;"><%= focus %></a>
                 </li>
               <% end %>
             </ul>
