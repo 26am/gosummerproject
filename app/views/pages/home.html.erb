@@ -10,29 +10,15 @@
 	          <h2>By Geography</h2>
 	          <ul id="splash_geo">
               <li>
-                <a href="#">In the US</a>
-              	<div class="splash_submenu2">
-	                <h1>In the US</h1>
-                  <ul>
-                    <% projects.where(country: 'United States').each do |p| %>
-                      <li><%= link_to(p.name, project_path(p.id)) %></li>
-                    <% end %>
-	                </ul>
-                </div>
+                <a href="http://gosummerproject.com/projects?country=United+States">In the US</a>
+              	
               </li>
               <li>
-                <a href="#" style="line-height: 21px !important;">Around the<br>World</a>
-                <div class="splash_submenu2">
-	                <h1>Around the World</h1>
-                  <ul>
-                    <% projects.where("country <> 'United States'").each do |p| %>
-                      <li><%= link_to(p.name, project_path(p.id)) %></li>
-                    <% end %>
-	                </ul>
-                </div>
+                <a href="http://gosummerproject.com/projects?world_region=oceania,eastern+europe,western+europe,east+asia,south+asia,southeast+asia,NAME,PACT,Francophone+Africa,Southern+and+Eastern+Africa,Nigeria,Latin+America,South+America,Australia,South+Pacific" style="line-height: 21px !important;">Around the<br>World</a>
+                
 
               </li>
-	            <li><a href="#">Via a Map</a></li>
+	            <li><a href="/projects">Via a Map</a></li>
 	          </ul>
 	        </div>
 	      </li>
@@ -43,37 +29,16 @@
 	          <h2>By Environment</h2>
 	          <ul id="splash_env">
 	            <li>
-	              <a href="#">In the City</a>
-	              <div class="splash_submenu2">
-	                <h1>In the City</h1>
-                  <ul>
-                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.name = 11").each do |p| %>
-                      <li><%= link_to(p.name, project_path(p.id)) %></li>
-                    <% end %>
-                  </ul>
-	              </div>
+	              <a href="http://gosummerproject.com/projects?focus=11">In the City</a>
+	              
 	            </li>
               <li>
-                <a href="#">On the Beach</a>
-	              <div class="splash_submenu2">
-	                <h1>On the Beach</h1>
-                  <ul>
-                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 2").each do |p| %>
-                      <li><%= link_to(p.name, project_path(p.id)) %></li>
-                    <% end %>
-                  </ul>
-	              </div>
+                <a href="http://gosummerproject.com/projects?focus=2">On the Beach</a>
+	              
               </li>
               <li>
-                <a href="#" style="line-height: 21px !important;">In the<br>Mountains</a>
-	              <div class="splash_submenu2">
-	                <h1>In the<br>Mountains</h1>
-                  <ul>
-                    <% projects.where(id: [326,335,338,343,391,406,409,426,433,532,630,631,709,749]).each do |p| %>
-                      <li><%= link_to(p.name, project_path(p.id)) %></li>
-                    <% end %>
-                  </ul>
-	              </div>
+                <a href="http://gosummerproject.com/projects?id=326,335,338,343,391,406,409,426,433,532,630,631,709,749" style="line-height: 21px !important;">In the<br>Mountains</a>
+	              
               </li>
 	          </ul>
 	        </div>
@@ -85,37 +50,16 @@
 	          <h2>By Options</h2>
 	          <ul id="splash_opt">
               <li>
-                <a href="#" style="line-height: 21px !important;">Office<br>Internship</a>
-                <div class="splash_submenu2">
-	                <h1>Office<br>Internship</h1>
-                  <ul>
-                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 12").each do |p| %>
-                      <li><%= link_to(p.name, project_path(p.id)) %></li>
-                    <% end %>
-                  </ul>
-	              </div>
+                <a href="http://gosummerproject.com/projects?focus=12" style="line-height: 21px !important;">Office<br>Internship</a>
+                
               </li>
               <li>
-                <a href="#">Get a Job</a>
-                <div class="splash_submenu2">
-	                <h1>Get a Job</h1>
-                  <ul>
-                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 1").each do |p| %>
-                      <li><%= link_to(p.name, project_path(p.id)) %></li>
-                    <% end %>
-                  </ul>
-	              </div>
+                <a href="http://gosummerproject.com/projects?job=1">Get a Job</a>
+                
               </li>
               <li>
-                <a href="#" style="line-height: 21px !important;">Work with<br>Greek Students</a>
-                <div class="splash_submenu2">
-	                <h1>Work with<br>Greek Students</h1>
-                  <ul>
-                    <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = 8").each do |p| %>
-                      <li><%= link_to(p.name, project_path(p.id)) %></li>
-                    <% end %>
-                  </ul>
-	              </div>
+                <a href="http://gosummerproject.com/projects?focus=8" style="line-height: 21px !important;">Work with<br>Greek Students</a>
+                
               </li>
 	          </ul>
 	        </div>
@@ -129,14 +73,7 @@
               <% SpMinistryFocus.order(:name).each do |focus| %>
                 <li>
                   <a href="#"><%= focus %></a>
-                  <div class="splash_submenu2">
-                    <h1><%= focus %></h1>
-                    <ul>
-                      <% projects.includes(:ministry_focuses).where("sp_ministry_focuses.id = ?", focus.id).each do |p| %>
-                        <li><%= link_to(p.name, project_path(p.id)) %></li>
-                      <% end %>
-                    </ul>
-                  </div>
+                  
                 </li>
               <% end %>
             </ul>
@@ -230,9 +167,9 @@
 		  $(this).find('div:first').show(); },function(){ $(this).find('div:first').hide();
 		});
     $("ul#splash_mainmenu ul div.splash_submenu2").css({display: "none"}); // Opera Fix
-		$("ul#splash_mainmenu ul li").hover(function(){
-		  $(this).find('div:first').show(); },function(){ $(this).find('div:first').hide();
-		});
+		// $("ul#splash_mainmenu ul li").hover(function(){
+		// 		  $(this).find('div:first').show(); },function(){ $(this).find('div:first').hide();
+		// 		});
 </script>
 
 <script type="text/javascript">
@@ -244,6 +181,7 @@
     $("#splash_nav6").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-4150px"});});
     $("#splash_nav7").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-4980px"});});
 </script>
+
 
 
 <section id="decision"> 
