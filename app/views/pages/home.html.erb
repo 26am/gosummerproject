@@ -10,11 +10,11 @@
 	          <h2>By Geography</h2>
 	          <ul id="splash_geo">
               <li>
-                <a href="http://gosummerproject.com/projects?country=United+States">In the US</a>
+              <a href="<%= projects_path(country: 'United+States') %>">In the US</a>
               	
               </li>
               <li>
-                <a href="http://gosummerproject.com/projects?world_region=oceania,eastern+europe,western+europe,east+asia,south+asia,southeast+asia,NAME,PACT,Francophone+Africa,Southern+and+Eastern+Africa,Nigeria,Latin+America,South+America,Australia,South+Pacific" style="line-height: 21px !important;">Around the<br>World</a>
+                <a href="<%= projects_path(world_region: 'oceania,eastern+europe,western+europe,east+asia,south+asia,southeast+asia,NAME,PACT,Francophone+Africa,Southern+and+Eastern+Africa,Nigeria,Latin+America,South+America,Australia,South+Pacific') %>" style="line-height: 21px !important;">Around the<br>World</a>
                 
 
               </li>
@@ -29,15 +29,15 @@
 	          <h2>By Environment</h2>
 	          <ul id="splash_env">
 	            <li>
-	              <a href="http://gosummerproject.com/projects?focus=11">In the City</a>
+	              <a href="<%= projects_path(focus: 11) %>">In the City</a>
 	              
 	            </li>
               <li>
-                <a href="http://gosummerproject.com/projects?focus=2">On the Beach</a>
+                <a href="<%= projects_path(focus: 2) %>">On the Beach</a>
 	              
               </li>
               <li>
-                <a href="http://gosummerproject.com/projects?id=326,335,338,343,391,406,409,426,433,532,630,631,709,749" style="line-height: 21px !important;">In the<br>Mountains</a>
+                <a href="<%= projects_path(id: '326,335,338,343,391,406,409,426,433,532,630,631,709,749') %>" style="line-height: 21px !important;">In the<br>Mountains</a>
 	              
               </li>
 	          </ul>
@@ -50,15 +50,15 @@
 	          <h2>By Options</h2>
 	          <ul id="splash_opt">
               <li>
-                <a href="http://gosummerproject.com/projects?focus=12" style="line-height: 21px !important;">Office<br>Internship</a>
+                <a href="<%= projects_path(focus: 12) %>" style="line-height: 21px !important;">Office<br>Internship</a>
                 
               </li>
               <li>
-                <a href="http://gosummerproject.com/projects?job=1">Get a Job</a>
+                <a href="<%= projects_path(job: 1) %>">Get a Job</a>
                 
               </li>
               <li>
-                <a href="http://gosummerproject.com/projects?focus=8" style="line-height: 21px !important;">Work with<br>Greek Students</a>
+                <a href="<%= projects_path(focus: 8) %>" style="line-height: 21px !important;">Work with<br>Greek Students</a>
                 
               </li>
 	          </ul>
@@ -72,7 +72,7 @@
             <ul class="splash_textlist">
               <% SpMinistryFocus.order(:name).each do |focus| %>
                 <li>
-                  <a href="http://gosummerproject.com/projects?focus=<%= focus.id %>" style="line-height: 21px !important;"><%= focus %></a>
+                  <a href="<%= projects_path(focus: focus.id) %>" style="line-height: 21px !important;"><%= focus %></a>
                 </li>
               <% end %>
             </ul>
