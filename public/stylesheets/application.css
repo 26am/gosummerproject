@@ -379,7 +379,7 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
     #searchdate div.field {display: inline-block;float: left; font-weight: bold; font-size: 14px;}
     #searchdate input[type=submit] {border: 0;width: 72px; float: none; display: block;margin-bottom: 1px; height: auto; font-size: 20px;}
     #searchdate .datewrap {margin-bottom: 5px; background: #efefef; border: 2px solid #ccc; padding: 4px;}
-
+    #searchdate .gobtn {clear: both;}
 
 		.clearboth {clear: both;}
 
