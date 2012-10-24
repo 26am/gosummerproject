@@ -312,6 +312,8 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 		ul#splash_mainmenu > li > a {display: block; padding: 5px 0;}
 		ul#splash_mainmenu > li > a:hover {background-color: #fff;}
 		ul#splash_mainmenu > li > a > img {display: block; width: 42px; margin: 0 auto;}
+		
+		div.splash_submenu.minfocus_sub {width: 690px; top: -122px !important;}
 
 		div.splash_submenu, div.splash_submenu2 {position: absolute; left: 64px; top: -34px; background-color: #fff; padding: 5px 0 10px; border-radius: 5px; text-align: left; width: 255px; z-index: 1;}
 		ul#splash_mainmenu > li:last-of-type div.splash_submenu {padding: 5px 10px; width: 336px;}
@@ -356,6 +358,11 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 		ul.splash_textlist li {height: auto;}
 		ul.splash_textlist a {font-size: 12px; line-height: 14px; text-transform: none; background: none; padding: 3px 15px 3px 25px;}
 
+    .minfocus {
+      float: left;
+      width: 342px;
+    }
+
 		#splash_right {width: 830px; height: 580px; float: left; overflow: hidden; border-radius: 28px;}
 		#splash_slider {width: 5810px;}
 		#splash_slide1, #splash_slide2, #splash_slide3, #splash_slide4, #splash_slide5, #splash_slide6, #splash_slide7 {width: 830px; height: 580px; float: left;}
@@ -369,9 +376,9 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 
     #searchdate {margin: 0 16px}
     #searchdate input[type=text] {width: 80px; display: block; height: 25px; }
-    #searchdate div.field {display: inline-block;float: left;}
+    #searchdate div.field {display: inline-block;float: left; font-weight: bold; font-size: 14px;}
     #searchdate input[type=submit] {border: 0;width: 72px; float: none; display: block;margin-bottom: 1px; height: auto; font-size: 20px;}
-
+    #searchdate .datewrap {margin-bottom: 5px; background: #efefef; border: 2px solid #ccc; padding: 4px;}
 
 
 		.clearboth {clear: both;}
