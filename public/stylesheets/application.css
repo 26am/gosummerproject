@@ -188,6 +188,8 @@ ul.links li {margin-bottom: 5px; font-family: "Helvetica Neue", Helvetica, Arial
 ul.links a {color: #666;}
 ul.links .head a {color: #EC1D3B; font-size: 15px; font-family: 'Rockwell';}
 
+.mobileswitch {display: block; clear: both; }
+.mobileswitch a {display: block; margin-top: 40px; height: 30px; line-height: 30px; color: #666; font-size: 14px;}
 
 /* ===========================================
 	PAGES
