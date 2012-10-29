@@ -5,7 +5,16 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag 'jquery.min.js' %>
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-	<%= javascript_include_tag 'jquery.stickyPanel', 'jquery.waypoints', 'slides.min.jquery', 'jquery.polaroid', :defaults %>
+	<style type="text/css" media="screen">
+		.slides_container {width:400px;			height: auto;			display:none;			padding-top: 28px;		}
+		.slides_container div {width:400px;			height:200px;			display:block;		}		
+		#sliderWrapper {position: relative;		}		
+		#sliderWrapper .pagination {list-style:none;			margin:0;			padding:0;			height: auto;			position: absolute;			top: 0;			right: 0;			width: auto;}
+		#sliderWrapper .pagination li {margin: 0 5px 0 0;		}
+		#sliderWrapper .pagination li a {color: #00abbd; background: #00abbd; border-radius: 10px; width: 16px; height: 16px; padding: 0;}
+		#sliderWrapper .pagination .current a {color:#ed1a3b;	background: #ed1a3b;}
+	</style>
+	<%= javascript_include_tag 'jquery.tn3.min.js', 'jquery.stickyPanel', 'jquery.waypoints', 'slides.min.jquery', 'jquery.polaroid', 'jquery.hoverscroll', :defaults %>
 	<script src="http://connect.facebook.net/en_US/all.js#appId=169422786455893&amp;xfbml=1"></script>
   <%= csrf_meta_tag %>
 	<script type="text/javascript">
@@ -19,6 +28,22 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
 	</script>
+
+  <script type="text/javascript">
+  	$(document).ready(function() {
+  		//Thumbnailer.config.shaderOpacity = 1;
+  		var tn1 = $('.mygallery').tn3({
+        skinDir:"/stylesheets/skins",
+				skin:"tn3e"
+      });
+  	});
+  </script>
+
+  <link type="text/css" rel="stylesheet" href="/stylesheets/skins/tn3e/tn3e.css"></link>
+
+
+	<script type="text/javascript" src="//use.typekit.net/drd0hmi.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body> 
 <div id="fb-root"></div>
@@ -36,70 +61,85 @@
 </script>
 
 <div id='wrapper' role='main'> 
-	<div id="browser"><p>the summer project website works best in the latest versions of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/fx/">Firefox</a> and <a href="http://www.apple.com/safari/">Safari</a></p></div>
-	<section id='home' role='banner'> 
-		<h2 id='logo'>
-			<% if current_page?(root_url) %>
-				<%= link_to '', "#home" %>
-			<% else %>
-				<%= link_to '', root_url %>
-			<% end %>
-		</h2> 
+	<div id="browser" style="display: none;"><p>the summer project website works best in the latest versions of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.mozilla.org/en-US/firefox/fx/">Firefox</a> and <a href="http://www.apple.com/safari/">Safari</a></p></div>
+	<section id="pageHeader">
+		<div class="container" style=" width: 950px;">
+		  <div id="headerLeft">
+		    <%= link_to(image_tag('/images/logo.png', :width => "266", :height => "168"), root_url) %>
+		  </div>
+		  <div id="headerRight">
+		    <div id="smlogin"><a href="#">log in</a></div>
+		    <div id="sliderWrapper">
+					<div class="slides_container">
+						<div><%= link_to(image_tag("video_slide1.png"), "https://www.facebook.com/summerproject?ref=stream") %></div>
+						<div><%= link_to(image_tag("video_slide2.png"), "https://www.facebook.com/summerproject?ref=stream") %> %></div>
+						<div><%= link_to(image_tag("video_slide3.png"), "/projects") %></div>
+					</div>
+		    </div>
+		
+				<script>
+					$(function(){
+						$('#sliderWrapper').slides({
+							preload: true,
+							generateNextPrev: false
+						});
+					});
+				</script>
+				
+		  </div>
+		</div>
 	</section>
 	<div id='body_content'> 
 		<%= yield %>
 	</div>
 </div> 
 <nav id='nav' role='navigation'> 
-<ul class='banner'> 
-<li>
-<% if  current_page?(root_url) %>
-<%= link_to image_tag("nav/explore.png"), "#projects" %>
-</li> 
-<li><%= link_to image_tag("nav/decision.png"), "#decision" %></li> 
-<li><%= link_to image_tag("nav/calendar.png"), "#calendar" %></li>
-<li><%= link_to image_tag("nav/logo.png", :mouseover => "nav/apply.png", :class => "circle", :style => "margin-top:-42px;" ), "https://sp.campuscrusadeforchrist.com/apply" %></li> 
-<li><%= link_to image_tag("nav/downloads.png"), "#downloads" %></li> 
-<li><%= link_to image_tag("nav/connect.png"), "#connect" %></li> 
-<li><%= link_to image_tag("nav/stories.png"), "#stories" %></li>
-<% else  %>
-<%= link_to image_tag("nav/explore.png"), root_url + "#projects" %>
-</li> 
-<li><%= link_to image_tag("nav/decision.png"), root_url + "#decision" %></li> 
-<li><%= link_to image_tag("nav/calendar.png"), root_url + "#calendar" %></li> 
-<li><%= link_to image_tag("nav/logo.png", :mouseover => "nav/apply.png", :class => "circle", :style => "margin-top:-42px;" ), "https://sp.campuscrusadeforchrist.com/apply" %></a></li> 
-<li><%= link_to image_tag("nav/downloads.png"), root_url + "#downloads" %></li> 
-<li><%= link_to image_tag("nav/connect.png"), root_url + "#connect" %></li> 
-<li><%= link_to image_tag("nav/stories.png"), root_url + "#stories" %></li>
-<% end  %>
-</ul> 
+<div id="uppernav">
+	<%= link_to(image_tag('/images/letsgo.png', :width => "168", :height => "168", :id => "letsgo"), "/") %>
+	<div id="links">
+		<%= link_to(image_tag('/images/explore.png', :width => "157", :height => "50"), "/#splash") %>
+		<%= link_to(image_tag('/images/apply.png', :width => "127", :height => "43"), "/apply") %>
+	</div>
+</div>
 <div id="stitch">
-<ul class='landing'> 
-<li><%= link_to image_tag("nav/whatissp.png"), '/what-is-a-summer-project' %></li> 
-<li><%= link_to image_tag("nav/projects.png"), '/projects' %></li> 
-<li><%= link_to image_tag("nav/guide.png"), '/guide' %></li>
-<li><% if current_page?(root_url) %> 
-			<%= link_to image_tag("nav/status.png"), '#calendar' %>
-		<% else %>
-			<%= link_to image_tag("nav/status.png"), root_url + "#calendar" %>
-		<% end %>
-</li> 
-<li><%= link_to image_tag("nav/accepted.png"), '/accepted' %></li> 
-<li style="margin-left:160px;"><%= link_to image_tag("nav/aboutcru.png"), '/about-cru' %></li> 
-<li><%= link_to image_tag("nav/parents.png"), '/parents' %></li> 
-<li><%= link_to image_tag("nav/faq.png"), '/faq' %></li> 
-<li><%= link_to image_tag("nav/contact.png"), '/contact' %></li> 
-<li><fb:like href="https://www.facebook.com/summerproject" send="false" layout="button_count" style="margin-top:7px;" send="false" layout="button_count" width="75" show_faces="false"></fb:like></li> 
-</ul> 
+	<div class="landing_wrap">
+		<ul class='landing'> 
+			
+			<% if current_page?(root_url) %> 
+				<li><%= link_to image_tag("nav/whatissp.png"), '/what-is-a-summer-project' %></li> 
+				<li><%= link_to(image_tag("nav/resources.png"), "#decision", :class => "top") %></li>
+				<li><%= link_to image_tag("nav/status.png"), '#calendar', :class => "top" %></li>
+				<li><%= link_to(image_tag("nav/media.png"), "#downloads", :class => "top") %></li>
+				<li><%= link_to(image_tag("nav/storiesn.png"), "#stories", :class => "top") %></li>
+				<li><%= link_to image_tag("nav/parents.png"), '/parents' %></li> 
+				<li><%= link_to image_tag("nav/contact.png"), '/contact' %></li> 
+			<% else %>
+				<li><%= link_to image_tag("nav/whatissp.png"), '/what-is-a-summer-project' %></li> 
+				<li><%= link_to(image_tag("nav/resources.png"), root_url + "#decision", :class => "top") %></li>
+				<li><%= link_to image_tag("nav/status.png"), root_url + '#calendar', :class => "top" %></li>
+				<li><%= link_to(image_tag("nav/media.png"), root_url + "#downloads", :class => "top") %></li>
+				<li><%= link_to(image_tag("nav/storiesn.png"), root_url + "#stories", :class => "top") %></li>
+				<li><%= link_to image_tag("nav/parents.png"), '/parents' %></li> 
+				<li><%= link_to image_tag("nav/contact.png"), '/contact' %></li> 
+			<% end %>
+			
+		<li style="display: none;"><%= link_to image_tag("nav/projects.png"), '/projects' %></li> 
+		<li style="display: none;"><%= link_to image_tag("nav/guide.png"), '/guide' %></li>
+		<li style="display: none;"><%= link_to image_tag("nav/accepted.png"), '/accepted' %></li> 
+		<li style="display: none;"><%= link_to image_tag("nav/aboutcru.png"), '/about-cru' %></li> 
+		<li style="display: none;"><%= link_to image_tag("nav/faq.png"), '/faq' %></li> 
+		<li style="display: none;"><fb:like href="https://www.facebook.com/summerproject" send="false" layout="button_count" style="margin-top:7px;" send="false" layout="button_count" width="75" show_faces="false"></fb:like></li> 
+		</ul> 
+	</div>
 </div>
 
 </nav> 
 <section style="padding:0;"> 
-	<div class="ribbon" style="margin:0;"><div class="container" title="Back to Top"><a href="#home" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
+	<div class="ribbon" style="margin:0;"><div class="container" title="Back to Top"><a href="#fb-root" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
 	<div class="container" id='footer' role='contentinfo'> 
 	  <div id="footerlinks">
 	    <ul class="links">
-	      <li class="head"><%= link_to("Apply", "https://sp.campuscrusadeforchrist.com/apply") %></li>
+	      <li class="head"><%= link_to("Apply", "/apply") %></li>
         <li><%= link_to("Log In", "https://sp.campuscrusadeforchrist.com/apply") %></li> </li>
       </ul>
       <ul class="links">
@@ -120,7 +160,7 @@
         <li class="head"><%= link_to("Social Media","/#connect") %></li>
         <li><%= link_to("Facebook","http://www.facebook.com/summerproject") %></li>
         <li><%= link_to("Twitter","https://twitter.com/gosummerproject") %></li>
-        <li><%= link_to("Tumblr", "http://tumblr.com") %></li>
+        <li><%= link_to("Tumblr", "http://gosummerproject.tumblr.com/") %></li>
       </ul>
       <ul class="links">
         <li class="head"><%= link_to("Contact","/contact") %></li>

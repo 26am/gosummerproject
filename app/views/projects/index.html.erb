@@ -1,10 +1,23 @@
 <%= javascript_include_tag 'jquery.tipTip', :cache => true %>
 <% content_for :body_content_left do %>
+
+
+<style>
+	<% if @projects %><% else %>
+		.hider {display: none;}
+		#exploreProj #Content {float: none; width: auto;}
+	<% end %>
+	.pin_status img {height: 30px; vertical-align: middle;}
+	.pin_status {line-height: 50px; font-family: Arial; display: inline-block; margin-right: 15px; font-size: 14px; font-weight: bold;}
+</style>
+
+
 <section id="exploreProj">
 	<div class="container">	
-  	<div id="sideBar">
+  	<div id="sideBar"> 
+			<div class="hider">
 			<h2>Project Filter</h2>					
-			<p>As we prepare for all of our 2013 Summer Projects, our project information will be continually updated; please check back regularly for new opportunities.</p>
+			<p>As we prepare for all of our Summer Projects, our project information will be continually updated; please check back regularly for new opportunities.</p>
 			<div class="explore_projects">
 	      <h3>Explore using categories</h3>
 	    	<h4><a id="us"></a>US project locations</h4>
@@ -66,12 +79,16 @@
 	    		<div id="datepicker_end"></div>
 	    	</div>
 	    	<input class="ui-button ui-state-default ui-corner-all dp_button" type="button" name="dp_button" value="Find Projects" />
-	    </div>    
+	    </div>  
+		</div>
 		</div>
 		<% if @projects %>
 		<div id="Content">
 			<h1>Project Listing</h1>
 			<div class="listing">
+				<% if @projects.blank? %>
+					<p>Unfortunately, we couldn't find any projects matching your search. Please try a different search.</p>
+				<% end %>
 				<% @projects.each do |project| %>
 					<ul>
 					<li class="project_listing">
@@ -88,7 +105,26 @@
     	<div class="explore_projects_top">
   			<h1>Explore Summer Projects</h1>
       	<h2>Explore using a map</h2>
-      	<p class="info">Below are only <strong>some</strong> of the projects. If a project is in a sensitive location, or if its coordinates have not been specified, it will not appear on this map. The color of the map marker indicates how full the project is: Green=less than 50%, Yellow=more than 50%, Red=full.</p>
+      	<p class="info">Below are only <strong>some</strong> of the projects. If a project is in a sensitive location, 
+						or if its coordinates have not been specified, it will not appear on this map. The color of the map marker indicates 
+						how full the project is: <Br/><br/>
+						
+						<div class="pin_status">
+							<%= image_tag('pin_green.png') %>
+							less than 50% 
+						</div>
+						
+						<div class="pin_status">
+						<%= image_tag('pin_yellow.png') %>
+						more than 50%
+						</div>
+						
+						<div class="pin_status">
+						<%= image_tag('pin_red.png') %>
+						This project is full
+						</div>
+						
+						<br/><br/></p>
 	      <script type="text/javascript">
 	      	// Load Google Map first, after rest of page has loaded
 	      	$(document).ready(init);
@@ -96,7 +132,7 @@
 	      	$(window).load(getMarkers);
 	      </script>
 	      <div id="map_overlay" style="display:none"><%= image_tag("ajax-loader.gif", :size => "54x55") %></div>
-	      <div id="map_canvas" style="width:100%; height: 350px;"></div>
+	      <div id="map_canvas" style="width:825px; height: 550px;"></div>
     	</div>
     </div>
   <% end %>

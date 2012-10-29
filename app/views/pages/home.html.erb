@@ -1,115 +1,286 @@
-<section id='polaroid' class="fabric"> 
-	<div id="polaroidcontainer">
-		<div class="polaroid">
-			<%= image_tag('polaroid/Polaroid-1.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/Polaroid-2.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-3.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-4.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-5.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-6.jpg') %>
-		</div>
-		<div class="polaroid">
-			<%= image_tag('polaroid/polaroid-7.jpg') %>
-		</div>	
-	</div>
-</section> 
+<% SpProject.order('sp_projects.name').tap do |projects| %>
+<section id="splash" class="fabric">
+	<div class="container" style="width: 950px;">
+		<div id="splash_left">
+	    <ul id="splash_mainmenu">
+	      <li>
+	        <a href="#" id="splash_nav1"><img src="/images/icon42_world.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Geography</h2>
+	          <ul id="splash_geo">
+              <li>
+              <a href="<%= projects_path(country: 'United States') %>">In the US</a>
+              	
+              </li>
+              <li>
+                <a href="<%= projects_path(world_region: 'oceania,eastern europe,western europe,east asia,south asia,southeast asia,NAME,PACT,Francophone Africa,Southern and Eastern Africa,Nigeria,Latin America,South America,Australia,South Pacific') %>" style="line-height: 21px !important;">Around the<br>World</a>
+                
 
-<section id="projects"> 
-	<div id="homestitch"></div>
-	<div class="container" >
-		<div id="slidemain">
-			<div id="slides">
-				<div class="slides_container">
-					<div class="slide">
-						<h1>FILTER THROUGH PROJECTS<br/>by GEOGRAPHY</h1>
-						<div class='cols' style="margin:60px 50px 0 100px;">
-							<%= link_to image_tag('slide/us.png'), '/projects?country=United+States' %>
-							<%= link_to "/projects?country=United+States" do %>
-								<h2>In the<br/>United States</h2>
-							<% end %>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/international.png'), '/projects?world_region=oceania,eastern+europe,western+europe,east+asia,south+asia,southeast+asia,NAME,PACT,Francophone+Africa,Southern+and+Eastern+Africa,Nigeria,Latin+America,South+America,Australia,South+Pacific' %>
-							<%= link_to "/projects?world_region=eastern+europe,western+europe,east+asia,south+asia,southeast+asia,NAME,PACT,Francophone+Africa,Southern+and+Eastern+Africa,Nigeria,Latin+America,South+America,Australia,South+Pacific" do %>
-								<h2>The Rest<br/>of the world</h2>
-							<% end %>
-						</div>
-					</div>
-					<div class="slide">
-						<h1>FILTER THROUGH PROJECTS<br/>by their length</h1>
-						<div class='cols'>
-							<%= link_to image_tag('slide/1-2weeks.png'), '/projects?from_weeks=1&to_weeks=2' %>
-							<a href='/projects?from_weeks=1&to_weeks=2'><h2>a little bit<br/>of time</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/3-5weeks.png'), '/projects?from_weeks=3&to_weeks=5' %>
-							<a href='/projects?from_weeks=3&to_weeks=5'><h2>about a<br/>month</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/7-12weeks.png'), '/projects?from_weeks=6&to_weeks=12' %>
-							<a href='/projects?from_weeks=6&to_weeks=12'><h2>the whole<br/>summer</h2></a>
-						</div>
-					</div>
-					<div class="slide">
-						<h1>FILTER THROUGH PROJECTS<br/>by their environment</h1>
-						<div class='cols'>
-							<%= link_to image_tag('slide/city.png'), '/projects?focus=11' %>
-							<a href='/projects?focus=11'><h2>In the City</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/beach.png'), '/projects?focus=2' %>
-							<a href='/projects?focus=2'><h2>On the Beach</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/mountains.png'), '/projects?id=326,335,338,343,391,406,409,426,433,532,630,631,709,749' %>
-							<a href='/projects?id=326,335,338,343,391,406,409,426,433,532,630,631,709,749'><h2>Mountains</h2></a>
-						</div>
-					</div>
-					<div class="slide">
-						<h1>FILTER THROUGH PROJECTS<br/>by their options</h1>
-						<div class='cols'>
-							<%= link_to image_tag('slide/intern.png'), '/projects?focus=12' %>
-							<a href='/projects?focus=12'><h2>Office<br/>Internship</h2></a>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/job.png'), '/projects?job=1' %>
-							<a href='/projects?job=1'><h2>You can<br/>get a job</h2></a>
-							<h3></h3>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/greek.png'), '/projects?focus=8' %>
-							<a href='/projects?focus=8'><h2>Work with<br/>Greek Students</h2></a>
-						</div>
-					</div>
-					<div class="slide">
-						<h1>CHECK OUT ALL THE OTHER<br/>SUMMER PROJECTS</h1>
-						<div class='cols' style=" width:300px; margin-right:45px;">
-							<%= link_to image_tag('slide/ethnic.png'), '/projects?focus=3,4,5,7,22' %>
-						</div>
-						<div class='cols'>
-							<%= link_to image_tag('slide/opportunities.png'), '/projects' %>
-						</div>
-					</div>
-				</div>
-				<a href="" class="prev"><h2>&lsaquo;&lsaquo;</h2></a>
-				<a href="" class="next"><h2>&rsaquo;&rsaquo;</h2></a>
-			</div>
-		</div>
+              </li>
+	            <li><a href="/projects">Via a Map</a></li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav2"><img src="/images/icon42_city.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Environment</h2>
+	          <ul id="splash_env">
+	            <li>
+	              <a href="<%= projects_path(focus: 11) %>">In the City</a>
+	              
+	            </li>
+              <li>
+                <a href="<%= projects_path(focus: 2) %>">On the Beach</a>
+	              
+              </li>
+              <li>
+                <a href="<%= projects_path(id: '326,335,338,343,391,406,409,426,433,532,630,631,709,749') %>" style="line-height: 21px !important;">In the<br>Mountains</a>
+	              
+              </li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav3"><img src="/images/icon42_options.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Options</h2>
+	          <ul id="splash_opt">
+              <li>
+                <a href="<%= projects_path(focus: 12) %>" style="line-height: 21px !important;">Office<br>Internship</a>
+                
+              </li>
+              <li>
+                <a href="<%= projects_path(job: 1) %>">Get a Job</a>
+                
+              </li>
+              <li>
+                <a href="<%= projects_path(focus: 8) %>" style="line-height: 21px !important;">Work with<br>Greek Students</a>
+                
+              </li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav4"><img src="/images/icon42_focus.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu minfocus_sub">
+	          <h1>Filter Projects</h1>
+	          <h2>By Ministry Focus</h2>
+            <ul class="splash_textlist ">
+              <% SpMinistryFocus.order(:name).each do |focus| %>
+                <li class="minfocus">
+                  <a href="<%= projects_path(focus: focus.id) %>" style="line-height: 21px !important;"><%= focus %></a>
+                </li>
+              <% end %>
+            </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav5"><img src="/images/icon42_length.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Length</h2>
+	          <ul id="splash_len">
+              <li>
+                <a href="/projects?from_weeks=1&to_weeks=2" style="line-height: 21px !important;">A Little Bit<br>of Time</a>
+                
+              </li>
+              <li>
+                <a href="/projects?from_weeks=3&to_weeks=5" style="line-height: 21px !important;">About a<br>Month</a>
+                
+              </li>
+              <li>
+                <a href="/projects?from_weeks=6&to_weeks=12" style="line-height: 21px !important;">The Whole<br>Summer</a>
+                
+              </li>
+	          </ul>
+	        </div>
+	      </li>
+	      <li>
+	        <a href="#" id="splash_nav6"><img src="/images/icon42_calendar.png" width="42" height="42" alt=""></a>
+	        <div class="splash_submenu">
+	          <h1>Filter Projects</h1>
+	          <h2>By Calendar</h2>
+            <p>Note: Choosing too large of a date range<br />may result in the list failing to load.</p>
+						<p>
+	            <%= form_tag projects_path, method: :get, :id => 'searchdate' do %>
+	              <div class="field">
+										Start Date:
+		 								<%#= text_field_tag :start_date %>
+										
+										<div class="datewrap">
+										<select name="start_month" id="start_month">
+											<option value="1">JAN</option>
+											<option value="2">FEB</option>
+											<option value="3">MAR</option>
+											<option value="4">APR</option>
+											<option value="5">MAY</option>
+											<option value="6">JUN</option>
+											<option value="7">JUL</option>
+											<option value="8">AUG</option>
+											<option value="9">SEP</option>
+											<option value="10">OCT</option>
+											<option value="11">NOV</option>
+											<option value="12">DEC</option>
+										</select>
+										<select name="start_day" id="start_day">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+											<option value="15">15</option>
+											<option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+											<option value="20">20</option>
+											<option value="21">21</option>
+											<option value="22">22</option>
+											<option value="23">23</option>
+											<option value="24">24</option>
+											<option value="25">25</option>
+											<option value="26">26</option>
+											<option value="27">27</option>
+											<option value="28">28</option>
+											<option value="29">29</option>
+											<option value="30">30</option>
+											<option value="31">31</option>
+										</select>
+										<select name="start_year" id="start_year">
+											<option value="2012">2012</option>
+											<option value="2013">2013</option>
+											<option value="2014">2014</option>
+										</select>
+										</div>
+
+								</div>
+	              <div class="field">
+										End Date: 
+										<%#= text_field_tag :end_date %>
+										<div class="datewrap">
+										<select name="end_month" id="end_month">
+											<option value="1">JAN</option>
+											<option value="2">FEB</option>
+											<option value="3">MAR</option>
+											<option value="4">APR</option>
+											<option value="5">MAY</option>
+											<option value="6">JUN</option>
+											<option value="7">JUL</option>
+											<option value="8">AUG</option>
+											<option value="9">SEP</option>
+											<option value="10">OCT</option>
+											<option value="11">NOV</option>
+											<option value="12">DEC</option>
+										</select>
+										<select name="end_day" id="end_day">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+											<option value="15">15</option>
+											<option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+											<option value="20">20</option>
+											<option value="21">21</option>
+											<option value="22">22</option>
+											<option value="23">23</option>
+											<option value="24">24</option>
+											<option value="25">25</option>
+											<option value="26">26</option>
+											<option value="27">27</option>
+											<option value="28">28</option>
+											<option value="29">29</option>
+											<option value="30">30</option>
+											<option value="31">31</option>
+										</select>
+										<select name="end_year" id="end_year">
+											<option value="2012">2012</option>
+											<option value="2013">2013</option>
+											<option value="2014">2014</option>
+										</select>
+										</div>
+								
+								</div>
+	              <div class="gobtn"><%= submit_tag 'Go'%></div>
+	            <% end %>
+						</p>
+	        </div>
+	      </li>
+	      <li>
+          <a href="#" id="splash_nav7"><img src="/images/icon42_search.png" width="42" height="42" alt=""></a>
+          <div class="splash_submenu">
+            <%= form_tag projects_path, method: :get do %>
+              <input type="text" name="name" placeholder="SEARCH BY PROJECT NAME" />
+            <% end %>
+	        </div>
+	      </li>
+	    </ul>
+	  </div>
+	  <div id="splash_right">
+	    <div id="splash_slider">
+	      <div id="splash_slide1"></div>
+	      <div id="splash_slide2"></div>
+	      <div id="splash_slide3"></div>
+	      <div id="splash_slide4"></div>
+	      <div id="splash_slide5"></div>
+	      <div id="splash_slide6"></div>
+	      <div id="splash_slide7"></div>
+	    </div>
+	  </div>
+  	<div class="clearboth"></div>
 	</div>
-</section> 
+</section>
+
+<script type="text/javascript">
+    $("ul#splash_mainmenu div.splash_submenu").css({display: "none"}); // Opera Fix
+		$("ul#splash_mainmenu li").hover(function(){
+		  $(this).find('div:first').show(); },function(){ $(this).find('div:first').hide();
+		});
+    $("ul#splash_mainmenu ul div.splash_submenu2").css({display: "none"}); // Opera Fix
+		// $("ul#splash_mainmenu ul li").hover(function(){
+		// 		  $(this).find('div:first').show(); },function(){ $(this).find('div:first').hide();
+		// 		});
+</script>
+
+<script type="text/javascript">
+    $("#splash_nav1").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"0"});});
+    $("#splash_nav2").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-830px"});});
+    $("#splash_nav3").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-1660px"});});
+    $("#splash_nav4").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-2490px"});});
+    $("#splash_nav5").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-3320px"});});
+    $("#splash_nav6").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-4150px"});});
+    $("#splash_nav7").hover(function(){$("#splash_slider").stop(); $("#splash_slider").animate({marginLeft:"-4980px"});});
+</script>
+
+
 
 <section id="decision"> 
-	<div class="ribbon"><div class="container" title="Back to Top"><a href="#home" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
+	<div class="ribbon"><div class="container" title="Back to Top"><a href="#fb-root" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
 	<div class="container">
 		<h1>HERE ARE SOME RESOURCES</h1>
 		<div style="width:950px; margin:auto;">
@@ -134,47 +305,45 @@
 </section> 
 
 <section id="calendar"> 
-	<div class="ribbon"><div class="container" title="Back to Top"><a href="#home" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
+	<div class="ribbon"><div class="container" title="Back to Top"><a href="#fb-root" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
 	<div class="container">
 		<h1>PLAN AHEAD TO APPLY FOR SUMMER PROJECT</h1>
 		<h2 id='timeline'></h2>
-		<div id="status">
-			<h2 style="color:#EC173F; font-family:'MuseoSans-700';padding:0 0 5px 15px;">MY APPLICATION STATUS</h2>
-			<table>
-			<tr>
-			<td class="width48">
-  			<h3 style="padding-left:15px;">Sign in through one of these services:</h3>
-  			<div style="padding-left:15px;">
-  				<div class="services"><%= link_to image_tag('facebook.png'), 'https://sp.campuscrusadeforchrist.com/auth/facebook' %><h4 style="margin-top:3px;">Facebook</h4></div>
-  				<div class="services"><%= link_to image_tag('google.png'), 'https://sp.campuscrusadeforchrist.com/auth/google_apps' %><h4 style="margin-top:3px;">Google</h4></div>
-  				<div class="services"><%= link_to image_tag('relay.png'), 'https://signin.ccci.org/cas/login?service=http%3A%2F%2Fsp.campuscrusadeforchrist.com%2Fauthentications' %><h4 style="margin-top:3px;">Relay</h4></div>
-  			</div>
-      </td>
-      <td class="width48 widthlast">
-  			<h3 style="">Don't use these services?</h3>
-  			<div id="login">
-  				<h4 style="font-size:18px; margin-left:15px; padding-top:10px;">YOU CAN SIGN IN OR <%= link_to "SIGN UP HERE", "https://sp.campuscrusadeforchrist.com/users/new" %></h4>
-  				<div id="contact_form">
-  					<form accept-charset="UTF-8" action="https://sp.campuscrusadeforchrist.com/session" method="post">
-  						<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="AwbA1lAb+jvexWB9kTrqROyJ7WMDnIkI+gM8UAsQfPc=" /></div>
-  						<fieldset>
-  							<input type="text" id="username" name="username" placeholder="USERNAME" />
-  							<input type="password" id="password" name="password" placeholder="PASSWORD" />
-  							<input type="submit" value="Login" name="submit"/>
-  						</fieldset>
-  					</form>
-  				</div>
-  				<h4 id="forgotPass"><a href="https://sp.campuscrusadeforchrist.com/session/send_password_email">Forgot your password?</a></h4>	      
-  			</div>
-      </td>
-      </tr>
-      </table>
-		</div> 
+		<div id="dates">
+			<h2 style="color:#EC173F; font-family:'MuseoSans-700'; margin:0 0 5px 15px;">APPLICATION DEADLINES</h2>
+			<div id="boxtop"><h2 id="dec10"></h2></div>
+			<div style="background:#90D8EC; padding:15px;"><h2 id="jan24"></h2></div>
+			<div id="boxbottom"><h2 id="feb24"></h2></div>
+			<h3 style="font-size: 17px; color:#EC173F; margin:14px 0 5px 15px;">It’s not too late to apply after February 24</h3>
+		</div>
+	  <div id="status">
+	  	<h2 style="color:#EC173F; font-family:'MuseoSans-700';margin:0 0 5px 15px;">MY APPLICATION STATUS</h2>
+			<h3 style="margin-left:15px;">Sign in through one of these services:</h3>
+			<div style="margin-left:15px;">
+				<div class="services"><%= link_to image_tag('facebook.png'), 'https://sp.campuscrusadeforchrist.com/auth/facebook' %><h4 style="margin-top:3px;">Facebook</h4></div>
+				<div class="services"><%= link_to image_tag('google.png'), 'https://sp.campuscrusadeforchrist.com/auth/google_apps' %><h4 style="margin-top:3px;">Google</h4></div>
+				<div class="services"><%= link_to image_tag('relay.png'), 'https://signin.ccci.org/cas/login?service=http%3A%2F%2Fsp.campuscrusadeforchrist.com%2Fauthentications' %><h4 style="margin-top:3px;">Relay</h4></div>
+			</div>
+			<h3 style="margin: 115px 0 5px 15px; ">Don't use these services?</h3>
+			<div id="login">
+				<h4 style="font-size:18px; margin-left:15px; padding-top:10px;">YOU CAN SIGN IN OR <%= link_to "SIGN UP HERE", "https://sp.campuscrusadeforchrist.com/users/new" %></h4>
+				<div id="contact_form">
+					<form accept-charset="UTF-8" action="https://sp.campuscrusadeforchrist.com/session" method="post">
+						<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="AwbA1lAb+jvexWB9kTrqROyJ7WMDnIkI+gM8UAsQfPc=" /></div>
+						<fieldset>
+							<input type="text" id="username" name="username" placeholder="USERNAME" />
+							<input type="password" id="password" name="password" placeholder="PASSWORD" />
+							<input type="submit" value="Login" id="loginbtn" name="submit"/>
+						</fieldset>
+					</form>
+				</div>
+				<h4 id="forgotPass"><a href="https://sp.campuscrusadeforchrist.com/session/send_password_email">Forgot your password?</a></h4>          
+			</div>
 	</div>
 </section> 
 
 <section id="downloads" class="fabric"> 
-	<div class="ribbon"><div class="container" title="Back to Top"><a href="#home" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
+	<div class="ribbon"><div class="container" title="Back to Top"><a href="#fb-root" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
 	<div class="container">
 		<h1>SEE, HEAR &amp; SHARE WHAT'S BEEN GOING ON</h1>
 		<div style="width:900px; margin:auto;">
@@ -204,7 +373,7 @@
 </section> 
 
 <section id="connect"> 
-	<div class="ribbon"><div class="container" title="Back to Top"><a href="#home" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
+	<div class="ribbon"><div class="container" title="Back to Top"><a href="#fb-root" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
 	<div class="container">
 		<h1>GET THE LATEST NEWS &amp; SHARE YOUR STORY.</h1> 
 		<div style="width:900px; margin:auto;">
@@ -245,7 +414,7 @@
 </section> 
 
 <section id="stories" class="fabric">
-	<div class="ribbon"><div class="container" title="Back to Top"><a href="#home" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
+	<div class="ribbon"><div class="container" title="Back to Top"><a href="#fb-root" class="top"><h1>&lsaquo;&lsaquo;</h1></a></div></div>
 	<div class="container">
 		<h1>HERE ARE THE STORIES OF OTHERS LIKE YOU</h1> 
 		<div style="width:800px; margin:auto;margin-top:15px;">
@@ -254,39 +423,46 @@
 				<%= link_to '/stories/meghan' do %>
 					<div class='storytag'><h2>Meghan</h2><h4>Anxious about Support Raising</h4></div>
 				<% end %>
+				<h3>"Our God is able and there was no need for me to worry about raising the money."</h3>
 			</div>
 			<div class='col'>
 				<%= link_to image_tag('stories/josh.png'), '/stories/josh' %>
 				<%= link_to '/stories/josh' do %>
 					<div class='storytag'><h2>Josh</h2><h4>Wanted his parents’ approval</h4></div>
 				<% end %>
+				<h3>"I was concerned that I would have to directly oppose my parents in deciding to go on the trip."</h3>
 			</div>
 			<div class='col'>
 				<%= link_to image_tag('stories/ryan.png'), '/stories/ryan' %>
 				<%= link_to '/stories/ryan' do %>				
 					<div class='storytag'><h2>Ryan</h2><h4>Struggled with insecurities</h4></div>
 				<% end %>
+				<h3>"One of the biggest things that God taught me throughout my time in college was that I had a part to play in the Great Commission"</h3>				
 			</div>
 		</div>
 		<div style="width:800px; margin:auto;">
 			<div class='col'>
 				<%= link_to image_tag('stories/coleton.png'), '/stories/coleton' %>
 				<%= link_to '/stories/coleton' do %>
-					<div class='storytag'><h2>Coleton</h2><h4>Needed with internship requirements</h4></div>
+					<div class='storytag'><h2>Coleton</h2><h4>Struggled with dreams of an internship</h4></div>
 				<% end %>
+				<h3>"I didn't let the first closed door stop me from pursuing something that God has given me a passion for."</h3>
 			</div>
 			<div class='col'>
 				<%= link_to image_tag('stories/rosa.png'), '/stories/rosa' %>
 				<%= link_to '/stories/rosa' do %>
-					<div class='storytag'><h2>Rosa</h2><h4>Needed her family’s approval</h4></div>
+					<div class='storytag'><h2>Rosa</h2><h4>Needed her family's approval</h4></div>
 				<% end %>
+				<h3>"God was calling me to trust Him and learn what it truly meant to say: God if this is where you want me to go, I’ll go."</h3>
 			</div>
 			<div class='col'>
 				<%= link_to image_tag('stories/sarah.png'), '/stories/sarah' %>
 				<%= link_to '/stories/sarah' do %>
 					<div class='storytag'><h2>Sarah</h2><h4>Struggled with feeling inadequate</h4></div>
 				<% end %>
+				<h3>"The only reason I was backing out of Summer Project was because I felt inadequate, scared, and anxious. All of those things are lies from the Enemy!"</h3>
 			</div>
 		</div>
 	</div> 
-</section>
+  </section>
+<% end %>
