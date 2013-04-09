@@ -9,11 +9,11 @@ class ProjectsController < ApplicationController
       unless params.size == 3
         conditions = basic_conditions
         unless params[:all] == 'true'
-          
+
           if params[:id] && !params[:id].empty?
             ids = params[:id].split(',')
             condition = []
-            ids.each do |id| 
+            ids.each do |id|
               condition << "#{SpProject.table_name}.id = ?"
               conditions[1] << id
             end
@@ -36,13 +36,13 @@ class ProjectsController < ApplicationController
             end
             conditions[0] << '(' + condition.join(' OR ') + ')'
           end
-          # this option has two modes of access to accomodate the form post and 
+          # this option has two modes of access to accomodate the form post and
           # the xml feed. params[:project][:partner] is for the form post.
           # params[:partner] is for the xml feed.
-          if (params[:partner] || (params[:project] && params[:project][:partner])) && 
+          if (params[:partner] || (params[:project] && params[:project][:partner])) &&
                 !(partner = params[:partner] || params[:project][:partner]).empty?
-            conditions[0] << "(#{SpProject.table_name}.primary_partner = ? OR 
-                               #{SpProject.table_name}.secondary_partner = ? OR 
+            conditions[0] << "(#{SpProject.table_name}.primary_partner = ? OR
+                               #{SpProject.table_name}.secondary_partner = ? OR
                                #{SpProject.table_name}.tertiary_partner = ?)"
             conditions[1] << partner
             conditions[1] << partner
@@ -51,7 +51,7 @@ class ProjectsController < ApplicationController
           if params[:world_region] && !params[:world_region].empty?
             world_regions = params[:world_region].split(',')
             condition = []
-            world_regions.each do |world_region| 
+            world_regions.each do |world_region|
               condition << "#{SpProject.table_name}.world_region LIKE ?"
               conditions[1] << '%'+world_region+'%'
             end
@@ -103,7 +103,7 @@ class ProjectsController < ApplicationController
         if conditions[0].empty?
           @projects = []
         else
-          @projects = SpProject.current.find(:all, 
+          @projects = SpProject.current.find(:all,
                                       :include => [:primary_ministry_focus, :ministry_focuses],
                                       :conditions => conditions,
                                       :order => 'sp_projects.name, sp_projects.year')
@@ -114,7 +114,7 @@ class ProjectsController < ApplicationController
     # by swapping @page for @project in the line below:
     present(@page)
   end
-  
+
   def markers
     conditions = basic_conditions
     @projects = SpProject.current.where(conditions[0].flatten.join(" AND "), conditions[1])
@@ -135,7 +135,7 @@ protected
   def find_page
     @page = Page.where(:link_url => "/projects").first
   end
-  
+
   def build_focus_conditions(focus, conditions)
     if focus
       condition = "(#{SpProject.table_name}.primary_ministry_focus_id = ? "
@@ -160,12 +160,13 @@ protected
       return ".country <> 'United States'"
     end
   end
-  
+
   def basic_conditions
     @year = 2013
     conditions = [[],[]]
     conditions[0] << "#{SpProject.table_name}.show_on_website = 1"
     conditions[0] << "(#{SpProject.table_name}.current_students_men + #{SpProject.table_name}.current_students_women + #{SpProject.table_name}.current_applicants_men + #{SpProject.table_name}.current_applicants_women) < (#{SpProject.table_name}.max_student_men_applicants + #{SpProject.table_name}.max_student_women_applicants)"
+    conditions[0] << "(#{SpProject.table_name}.current_students_men + #{SpProject.table_name}.current_students_women) < (#{SpProject.table_name}.max_accepted_men + #{SpProject.table_name}.max_accepted_women)"
     conditions[0] << "#{SpProject.table_name}.apply_by_date >= ?"
     conditions[1] << Date.today
     conditions
