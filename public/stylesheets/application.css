@@ -160,7 +160,7 @@ input:-webkit-input-placeholder, input:-moz-placeholder {color:#CCC;}
 /* ===========================================
 	STORIES
 ============================================== */
-.col {width:250px; float:left; text-align:center; margin:15px auto 0px auto; padding:0 8px;}
+.col {width:250px; float:left; text-align:center; margin:15px auto 0px auto; padding:0 8px; height:100px;}
 .col h3 { font-size:14px;} .col h4 { font-size:12px; padding-top:5px;}
 .col img {width: 150px; height: 150px;margin-bottom: 10px; -webkit-transform: rotate(-2deg); -moz-transform: rotate(-2deg); 
   -webkit-transition-duration: 400ms;
