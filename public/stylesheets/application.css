@@ -1,7 +1,7 @@
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0 auto; padding: 0; border: none; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
 
 html { height: 100%; }
-h1 { font-family: 'Rockwell'; font-size: 28px; text-align:center; color: #666666; text-shadow: #fff 1px 1px 0px; text-transform:uppercase;}
+h1 { font-family: 'Rockwell'; font-size: 28px; text-align:center; color: #920023; text-shadow: #fff 1px 1px 0px; text-transform:uppercase;}
 h2 { font-family: 'Rockwell'; font-size: 24px; }
 h3 { font-family: 'MuseoSans-500'; font-size: 18px; }
 h4 { font-family: 'MuseoSans-500'; font-size:14px; }
@@ -10,8 +10,8 @@ body { background:url('/images/noise.png') #fff; color: #666;}
 form, fieldset, input, textarea { margin: 0; padding: 0; border: 0; outline: none; color:#666666;}
 
 a { text-decoration:none; }
-a:link {color:#EC1D3B;}      /* unvisited link */
-a:visited {color:#EC1D3B;}  /* visited link */
+a:link {color:#920023;}      /* unvisited link */
+a:visited {color:#920023;}  /* visited link */
 a:hover {}  /* mouse over link */
 p, form { font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif; color: #666; }
 p {margin-top:1.5em;}
@@ -109,15 +109,15 @@ a.project_apply:hover {box-shadow: inset 0 -2px 7px #bbb;}
 ============================================== */
 #timeline {background:url('/images/timeline.png') no-repeat; width:1000px; height:162px; margin:20px 0px 0px 0px; }
 #dates {width: 393px; text-align:left;  float: left; margin:40px 30px 30px 75px; }
-#boxtop {background:#AAE2F3; padding:15px; -moz-border-radius-topleft:10px;-moz-border-radius-topright:10px;-webkit-bordertop-right-radius:10px;-webkit-bordertop-left-radius:10px;border-top-left-radius:10px;border-top-right-radius:10px;}
-#boxbottom {background:#AAE2F3; padding:15px; -moz-border-radius-bottomleft:10px;-moz-border-radius-bottomright:10px;-webkit-border-bottom-right-radius:10px;-webkit-border-bottom-left-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;}
+#boxtop {background:#63D0ED; padding:15px; -moz-border-radius-topleft:10px;-moz-border-radius-topright:10px;-webkit-bordertop-right-radius:10px;-webkit-bordertop-left-radius:10px;border-top-left-radius:10px;border-top-right-radius:10px;}
+#boxbottom {background:#63D0ED; padding:15px; -moz-border-radius-bottomleft:10px;-moz-border-radius-bottomright:10px;-webkit-border-bottom-right-radius:10px;-webkit-border-bottom-left-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;}
 #dec10 { background:url('/images/dec10.png') no-repeat; height:64px;}
 #jan24 { background:url('/images/jan24.png') no-repeat; height:64px;}
 #feb24 { background:url('/images/feb24.png') no-repeat; height:64px;}
 #divide { background:url('/images/divide.png') no-repeat; height:64px;}
 #status {width: 390px; text-align:left;  float: left; margin:40px 30px 0px 75px;}
 .services { width:69px; float:left; margin:10px 20px; text-align:center;}
-#login {background:#AAE2F3; height:150px; margin-top:0; -moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
+#login {background:#63D0ED; height:150px; margin-top:0; -moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
 #forgotPass {font-size:12px; margin-left:15px; padding-top:10px;}
 
 input { height: 30px; margin:5px 15px; padding-left:5px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-family: sans-serif; font-size: 21px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;}
@@ -152,7 +152,7 @@ input:-webkit-input-placeholder, input:-moz-placeholder {color:#CCC;}
 ============================================== */
 .col2 {width:400px; float:left; text-align:center; margin:30px auto 0 auto; padding:0 25px;}
 .col2 h2 { font-size:18px;}
-.box {background:#AAE2F3; color:#fff; padding:10px 20px; -moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;text-shadow: #ccc -1px -1px 2px; -moz-box-shadow: #ccc 1px 1px 2px;-webkit-box-shadow: #ccc 1px 1px 2px;box-shadow: #ccc 1px 1px 2px;}
+.box {background:#63D0ED; color:#fff; padding:10px 20px; -moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;text-shadow: #ccc -1px -1px 2px; -moz-box-shadow: #ccc 1px 1px 2px;-webkit-box-shadow: #ccc 1px 1px 2px;box-shadow: #ccc 1px 1px 2px;}
 .socialbox {background:#fff; width: 350px; height:400px; padding:3px 0; margin-top:15px; -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px; -moz-box-shadow: #ccc 1px 1px 2px; -webkit-box-shadow: #ccc 1px 1px 2px;box-shadow: #ccc 1px 1px 2px;}
 .share { text-align:right; padding:10px 25px;}
 
@@ -186,7 +186,7 @@ input:-webkit-input-placeholder, input:-moz-placeholder {color:#CCC;}
 ul.links {list-style: none; float: left; margin: 0 30px 0 0; text-align: left; font-size: 13px;}
 ul.links li {margin-bottom: 5px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 ul.links a {color: #666;}
-ul.links .head a {color: #EC1D3B; font-size: 15px; font-family: 'Rockwell';}
+ul.links .head a {color: #920023; font-size: 15px; font-family: 'Rockwell';}
 
 .mobileswitch {display: block; clear: both; }
 .mobileswitch a {display: block; margin-top: 40px; height: 30px; line-height: 30px; color: #666; font-size: 14px;}
@@ -210,10 +210,10 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 .fullwidth h1 {margin-top: 1.5em !important;}
 #page #sideBar, #exploreProj #sideBar, #contactForm #sideBar { border-right: 2px dotted #ccc; float:left; margin-top:40px; padding-right:25px; width:220px; }
 #page #contentTop {margin-top:30px;}
-#page h1, #photos h1, #contactPage h1, #exploreProj h1 {color:#ec1d3b; margin-top:00px; text-align:left;}
+#page h1, #photos h1, #contactPage h1, #exploreProj h1 {color:#920023; margin-top:00px; text-align:left;}
 #photos h1 {margin-bottom: 1em; margin-top: .5em;}
 #page h2 {color:#00b2af;}
-#page h3 {color:#00b2af; margin-top:1em;}
+#page h3 {color:#00626D; margin-top:1em;}
 
 #page blockquote {
 	-moz-border-radius:20px;-webkit-border-radius:20px;border-radius:20px;
@@ -235,7 +235,7 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 #exploreProj .listing {margin-top:20px;}
 #exploreProj .listing li {list-style:none;}
 #exploreProj .project_listing a, #exploreProj .locations a {border-bottom:1px dotted; font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;}
-#exploreProj .project_listing a:hover, #exploreProj .locations a:hover {color:#ec1d3b;}
+#exploreProj .project_listing a:hover, #exploreProj .locations a:hover {color:#920023;}
 .explore_projects, #datepicker-title, #projContact {border-top: 2px dotted #ccc; margin-top:30px; padding-top:20px;}
 .explore_projects h3 {color:#00b2af; font:bold 1em;}
 .explore_projects h4, #project_info h4 {color:#00b2af; margin-top:10px;}
@@ -301,8 +301,8 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 		  #smlogin a:hover {text-decoration: underline;}
 		  #sliderWrapper {margin-bottom: 17px;}
 		  #sliderNav {margin-bottom: 10px; height: 16px;}
-		  #sliderNav a {display: inline-block; float: right; padding: 8px; border-radius: 8px; background-color: #00abbd; margin-left: 6px;}
-		  #sliderNav a:hover {background-color: #ed1a3b;}
+		  #sliderNav a {display: inline-block; float: right; padding: 8px; border-radius: 8px; background-color: #920023; margin-left: 6px;}
+		  #sliderNav a:hover {background-color: #920023;}
 		  #slider {background: #cac8c8 url(/images/play.png) center center no-repeat; height: 200px;}
 		  #links {text-align: center;}
 		  #links a {margin: 0 23px;}
@@ -320,13 +320,13 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 		div.splash_submenu, div.splash_submenu2 {position: absolute; left: 64px; top: -34px; background-color: #fff; padding: 5px 0 10px; border-radius: 5px; text-align: left; width: 255px; z-index: 1;}
 		ul#splash_mainmenu > li:last-of-type div.splash_submenu {padding: 5px 10px; width: 336px;}
 		div.splash_submenu h1, div.splash_submenu h2 {margin: 0; font-family: "myriad-pro", "Trebuchet MS", Arial, Helvetica, sans-serif; text-transform: uppercase; padding: 0 15px;}
-		div.splash_submenu h1 {color: #ec1d3b; font-size: 24px; text-align: left;}
-		div.splash_submenu h2 {color: #00abbd; font-size: 18px; margin-bottom: 5px;}
+		div.splash_submenu h1 {color: #920023; font-size: 24px; text-align: left;}
+		div.splash_submenu h2 {color: #920023; font-size: 18px; margin-bottom: 5px;}
 		div.splash_submenu li {height: 52px; position: relative;}
 		div.splash_submenu li:last-of-type {margin-bottom: 0 !important;}
 		div.splash_submenu li:hover {background-color: #e0e0e0;}
-		div.splash_submenu p {font-size: 10px; color: #ec1d3b; margin-bottom: 0; padding: 0 15px;}
-		div.splash_submenu a {color: #ec1d3b; font-size: 18px; line-height: 42px; font-weight: bold; text-decoration: none; text-transform: uppercase; display: block; padding: 5px 0 5px 72px; background-position: 25px center; background-repeat: no-repeat;}
+		div.splash_submenu p {font-size: 10px; color: #920023; margin-bottom: 0; padding: 0 15px;}
+		div.splash_submenu a {color: #920023; font-size: 18px; line-height: 42px; font-weight: bold; text-decoration: none; text-transform: uppercase; display: block; padding: 5px 0 5px 72px; background-position: 25px center; background-repeat: no-repeat;}
 		div.splash_submenu a:hover {background-color: #e0e0e0;}
 		div.splash_submenu input {margin-left: 0px; border: #9a9a9a 3px solid; border-radius: 3px; padding: 5px; text-transform: uppercase; font-size: 24px; font-family: "myriad-pro", "Trebuchet MS", Arial, Helvetica, sans-serif; width: 320px;}
 
