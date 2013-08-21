@@ -162,7 +162,7 @@ input:-webkit-input-placeholder, input:-moz-placeholder {color:#CCC;}
 ============================================== */
 .col {width:250px; float:left; text-align:center; margin:15px auto 0px auto; padding:0 8px; height:310px;}
 .col h3 { font-size:14px;} .col h4 { font-size:12px; padding-top:5px;}
-.col img {width: 150px; height: 150px;margin-bottom: 10px; -webkit-transform: rotate(-2deg); -moz-transform: rotate(-2deg); 
+.col img {width: 150px; height: 150px;margin-bottom: 10px; -webkit-transform: rotate(-2deg); -moz-transform: rotate(-2deg); transform: rotate(-2deg);
   -webkit-transition-duration: 400ms;
   -webkit-transition-property: transform;
   -webkit-transition-timing-function: ease;
@@ -172,6 +172,9 @@ input:-webkit-input-placeholder, input:-moz-placeholder {color:#CCC;}
   -o-transition-duration: 400ms;
   -o-transition-property: transform;
   -o-transition-timing-function: ease;
+  transition-duration: 400ms;
+  transition-property: transform;
+  transition-timing-function: ease;
   }
 .col img:hover {-webkit-transform: rotate(2deg); -moz-transform: rotate(2deg); transform: rotate(2deg);}
 .storytag {background:url('/images/tag.png') no-repeat; width:246px; height:63px; padding:8px 0 0 0; margin: -20px 0 0 0; font-size:20px; text-decoration:none; color:#eee; z-index:1;}
