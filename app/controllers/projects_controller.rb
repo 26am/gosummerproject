@@ -162,7 +162,7 @@ protected
   end
 
   def basic_conditions
-    @year = 2013
+    @year = 2014
     conditions = [[],[]]
     conditions[0] << "#{SpProject.table_name}.show_on_website = 1"
     conditions[0] << "(#{SpProject.table_name}.current_students_men + #{SpProject.table_name}.current_students_women + #{SpProject.table_name}.current_applicants_men + #{SpProject.table_name}.current_applicants_women) < (#{SpProject.table_name}.max_student_men_applicants + #{SpProject.table_name}.max_student_women_applicants)"
