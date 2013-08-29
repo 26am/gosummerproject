@@ -371,13 +371,13 @@ body #wrapper #Content.fullwidth {float: none; display: block; width: auto; padd
 		#splash_right {width: 830px; height: 580px; float: left; overflow: hidden; border-radius: 28px;}
 		#splash_slider {width: 5810px;}
 		#splash_slide1, #splash_slide2, #splash_slide3, #splash_slide4, #splash_slide5, #splash_slide6, #splash_slide7 {width: 830px; height: 580px; float: left;}
-		#splash_slide1 {background: #000 url(/images/filter%20images/filter-1.jpg) center center no-repeat;}
-		#splash_slide2 {background: #000 url(/images/filter%20images/filter-2.jpg) center center no-repeat;}
-		#splash_slide3 {background: #000 url(/images/filter%20images/filter-3.jpg) center center no-repeat;}
-		#splash_slide4 {background: #000 url(/images/filter%20images/filter-4.jpg) center center no-repeat;}
-		#splash_slide5 {background: #000 url(/images/filter%20images/filter-5.jpg) center center no-repeat;}
-		#splash_slide6 {background: #000 url(/images/filter%20images/filter-6.jpg) center center no-repeat;}
-		#splash_slide7 {background: #000 url(/images/filter%20images/filter-7.jpg) center center no-repeat;}
+		#splash_slide1 {background: #000 url(/images/filter%20images/filter-1.png) center center no-repeat;}
+		#splash_slide2 {background: #000 url(/images/filter%20images/filter-2.png) center center no-repeat;}
+		#splash_slide3 {background: #000 url(/images/filter%20images/filter-3.png) center center no-repeat;}
+		#splash_slide4 {background: #000 url(/images/filter%20images/filter-4.png) center center no-repeat;}
+		#splash_slide5 {background: #000 url(/images/filter%20images/filter-5.png) center center no-repeat;}
+		#splash_slide6 {background: #000 url(/images/filter%20images/filter-6.png) center center no-repeat;}
+		#splash_slide7 {background: #000 url(/images/filter%20images/filter-7.png) center center no-repeat;}
 
     #searchdate {margin: 0 16px}
     #searchdate input[type=text] {width: 80px; display: block; height: 25px; }
