@@ -18,7 +18,7 @@ class SpProject < ActiveRecord::Base
 
   has_many   :stats, :class_name => "SpStat", :foreign_key => "project_id"
   belongs_to :primary_ministry_focus, :class_name => 'SpMinistryFocus', :foreign_key => :primary_ministry_focus_id
-  has_many :project_ministry_focuses, :class_name => 'SpProjectMinistryFocus'
+  has_many :project_ministry_focuses, :class_name => 'SpProjectMinistryFocus', foreign_key: 'project_id'
   has_many :ministry_focuses, through: :project_ministry_focuses
   has_many :sp_staff, :class_name => "SpStaff", :foreign_key => "project_id"
 
