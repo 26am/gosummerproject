@@ -139,8 +139,8 @@ protected
   def build_focus_conditions(focus, conditions)
     if focus
       condition = "(#{SpProject.table_name}.primary_ministry_focus_id = ? "
-      unless focus.sp_projects.empty?
-        condition += "OR #{SpProject.table_name}.id IN (#{focus.sp_projects.collect(&:id).join(',')}))"
+      unless focus.projects.empty?
+        condition += "OR #{SpProject.table_name}.id IN (#{focus.projects.collect(&:id).join(',')}))"
       else
         condition += ")"
       end

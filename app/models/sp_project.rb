@@ -18,7 +18,8 @@ class SpProject < ActiveRecord::Base
 
   has_many   :stats, :class_name => "SpStat", :foreign_key => "project_id"
   belongs_to :primary_ministry_focus, :class_name => 'SpMinistryFocus', :foreign_key => :primary_ministry_focus_id
-  has_and_belongs_to_many :ministry_focuses, :class_name => 'SpMinistryFocus', :join_table => "sp_ministry_focuses_projects"
+  has_many :project_ministry_focuses, :class_name => 'SpProjectMinistryFocus'
+  has_many :ministry_focuses, through: :project_ministry_focuses
   has_many :sp_staff, :class_name => "SpStaff", :foreign_key => "project_id"
 
   has_many :project_gospel_in_actions, :class_name => "SpProjectGospelInAction", :foreign_key => "project_id", :dependent => :destroy
@@ -35,21 +36,21 @@ class SpProject < ActiveRecord::Base
                                               'left join ministry_targetarea on sp_projects.id = ministry_targetarea.eventKeyID and eventType = "SP" ' +
                                               'left join ministry_activity on ministry_activity.fk_targetAreaID = ministry_targetarea.`targetAreaID` ' +
                                               'left join ministry_statistic on ministry_statistic.`fk_Activity` = ministry_activity.`ActivityID` ' +
-                                              "where sp_projects.id = #{id} and ministry_statistic.periodBegin is not null " + 
+                                              "where sp_projects.id = #{id} and ministry_statistic.periodBegin is not null " +
   'order by periodBegin desc' }
 
   validates_presence_of :name, :display_location, :start_date, :end_date, :student_cost, :max_accepted_men, :max_accepted_women,
-    :project_contact_name, 
-    :city, :country, 
+    :project_contact_name,
+    :city, :country,
     :primary_partner, :report_stats_to
 
-  # :project_contact_role, :project_contact_phone, :project_contact_email, 
-  #                         :project_contact2_name, :project_contact2_role, :project_contact2_phone, :project_contact2_email, 
+  # :project_contact_role, :project_contact_phone, :project_contact_email,
+  #                         :project_contact2_name, :project_contact2_role, :project_contact2_phone, :project_contact2_email,
   #                         :staff_start_date, :staff_end_date,
-  #                                                 
+  #
   validates_inclusion_of :use_provided_application, :partner_region_only, :in => [true, false], :message => "can't be blank"
 
-  #                        
+  #
   validates_presence_of  :apply_by_date, :if => :use_provided_application
   validates_presence_of  :state, :if => Proc.new { |project| !project.is_wsn? } #:is_wsn?
 
@@ -87,7 +88,7 @@ class SpProject < ActiveRecord::Base
   before_create :set_to_open
   before_save :get_coordinates, :calculate_weeks, :set_year
   begin
-    date_setters :apply_by_date, :start_date, :end_date, :date_of_departure, :date_of_return, :staff_start_date, :staff_end_date, :pd_start_date, :pd_end_date, 
+    date_setters :apply_by_date, :start_date, :end_date, :date_of_departure, :date_of_return, :staff_start_date, :staff_end_date, :pd_start_date, :pd_end_date,
       :pd_close_start_date, :pd_close_end_date, :student_staff_start_date, :student_staff_end_date, :open_application_date, :archive_project_date
   rescue NoMethodError
   end
@@ -101,7 +102,7 @@ class SpProject < ActiveRecord::Base
 
   def gospel_in_aciton_ids=(ids)
     self.gospel_in_actions = SpGospelInAction.find(ids)
-  end    
+  end
 
   # Leadership
   def pd(yr = nil)

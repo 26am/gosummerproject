@@ -1,6 +1,7 @@
 class SpMinistryFocus < ActiveRecord::Base
   establish_connection :uscm
-  has_and_belongs_to_many :sp_projects, :join_table => "sp_ministry_focuses_projects", :order => :name
+  has_many :project_ministry_focuses, :class_name => 'SpProjectMinistryFocus'
+  has_many :projects, through: :project_ministry_focuses, :order => :name
   default_scope order(:name)
 
   def to_s
