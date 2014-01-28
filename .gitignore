@@ -6,3 +6,4 @@ tmp/
 vendor/ruby/
 .project
 db/development.sqlite3
+.idea

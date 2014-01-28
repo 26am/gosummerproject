@@ -321,23 +321,7 @@
 			<h3 style="margin-left:15px;">Sign in through one of these services:</h3>
 			<div style="margin-left:15px;">
 				<div class="services"><%= link_to image_tag('facebook.png'), 'https://sp.campuscrusadeforchrist.com/auth/facebook' %><h4 style="margin-top:3px;">Facebook</h4></div>
-				<div class="services"><%= link_to image_tag('google.png'), 'https://sp.campuscrusadeforchrist.com/auth/google_apps' %><h4 style="margin-top:3px;">Google</h4></div>
-				<div class="services"><%= link_to image_tag('relay.png'), 'https://signin.ccci.org/cas/login?service=http%3A%2F%2Fsp.campuscrusadeforchrist.com%2Fauthentications' %><h4 style="margin-top:3px;">Relay</h4></div>
-			</div>
-			<h3 style="margin: 115px 0 5px 15px; ">Don't use these services?</h3>
-			<div id="login">
-				<h4 style="font-size:18px; margin-left:15px; padding-top:10px;">YOU CAN SIGN IN OR <%= link_to "SIGN UP HERE", "https://sp.campuscrusadeforchrist.com/users/new" %></h4>
-				<div id="contact_form">
-					<form accept-charset="UTF-8" action="https://sp.campuscrusadeforchrist.com/session" method="post">
-						<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="AwbA1lAb+jvexWB9kTrqROyJ7WMDnIkI+gM8UAsQfPc=" /></div>
-						<fieldset>
-							<input type="text" id="username" name="username" placeholder="USERNAME" />
-							<input type="password" id="password" name="password" placeholder="PASSWORD" />
-							<input type="submit" value="Login" id="loginbtn" name="submit"/>
-						</fieldset>
-					</form>
-				</div>
-				<h4 id="forgotPass"><a href="https://sp.campuscrusadeforchrist.com/session/send_password_email">Forgot your password?</a></h4>
+				<div class="services"><%= link_to image_tag('relay.png'), 'https://signin.relaysso.org/cas/login?service=http%3A%2F%2Fsp.campuscrusadeforchrist.com%2Fauthentications' %><h4 style="margin-top:3px;">Relay</h4></div>
 			</div>
 	</div>
 </section>
