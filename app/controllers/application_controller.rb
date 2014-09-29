@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :mobile_check
+  before_filter :redirect_to_cru_org
 
   def mobile_check
     session[:fullsite] = true if params[:fullsite]== '1'
@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
       rescue NoMethodError
       end
     end
+  end
+
+  def redirect_to_cru_org
+    redirect_to 'http://www.cru.org/summer'
   end
 
 end
